@@ -52,7 +52,7 @@
         <scene sceneID="4RP-Aa-xOj">
             <objects>
                 <viewController id="u5S-y5-lkt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mbG-rC-p8W">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="mbG-rC-p8W">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -349,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzG-lA-WI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="197" y="-677"/>
+            <point key="canvasLocation" x="200" y="-536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vzx-cK-BL5">

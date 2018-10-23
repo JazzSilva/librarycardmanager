@@ -14,6 +14,8 @@
 		B053B21C2174ED2B00243D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B053B21A2174ED2B00243D4C /* LaunchScreen.storyboard */; };
 		B053B2272174ED2C00243D4C /* librarycardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B2262174ED2C00243D4C /* librarycardsTests.swift */; };
 		B053B2322174ED2C00243D4C /* librarycardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B2312174ED2C00243D4C /* librarycardsUITests.swift */; };
+		DD40BEB1217E296F00E570DE /* libraryCardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB0217E296F00E570DE /* libraryCardManager.swift */; };
+		DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB2217E2B2F00E570DE /* patronModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B053B22D2174ED2C00243D4C /* librarycardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = librarycardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B053B2312174ED2C00243D4C /* librarycardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = librarycardsUITests.swift; sourceTree = "<group>"; };
 		B053B2332174ED2C00243D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD40BEB0217E296F00E570DE /* libraryCardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libraryCardManager.swift; sourceTree = "<group>"; };
+		DD40BEB2217E2B2F00E570DE /* patronModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patronModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				B053B2112174ED2A00243D4C /* AppDelegate.swift */,
 				B053B2132174ED2A00243D4C /* ViewController.swift */,
 				B053B2152174ED2A00243D4C /* Main.storyboard */,
+				DD40BEB0217E296F00E570DE /* libraryCardManager.swift */,
+				DD40BEB2217E2B2F00E570DE /* patronModel.swift */,
 				B053B2182174ED2B00243D4C /* Assets.xcassets */,
 				B053B21A2174ED2B00243D4C /* LaunchScreen.storyboard */,
 				B053B21D2174ED2B00243D4C /* Info.plist */,
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B053B2142174ED2A00243D4C /* ViewController.swift in Sources */,
+				DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */,
 				B053B2122174ED2A00243D4C /* AppDelegate.swift in Sources */,
+				DD40BEB1217E296F00E570DE /* libraryCardManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
