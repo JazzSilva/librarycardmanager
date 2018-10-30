@@ -17,7 +17,6 @@ protocol buttonDelegate: class {
 }
 
 class nextButton: UIButton {
-    
     weak var delegate: buttonDelegate?
     
     override init(frame: CGRect) {
@@ -43,5 +42,26 @@ class nextButton: UIButton {
     @objc func buttonTapped() {
         self.delegate?.onButtonTapped()
     }
+}
+
+class selectionButton: UIButton {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        formatButton()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    func formatButton() {
+        self.backgroundColor = .black
+        self.setTitleColor(.white, for: .normal)
+        self.setTitle("Default", for: .normal)
+        self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 25.0)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.widthAnchor.constraint(equalToConstant: 450).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    }
 }

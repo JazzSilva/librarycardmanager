@@ -33,7 +33,7 @@
 		DD40BED6218787C600E570DE /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED2218787C500E570DE /* RobotoSlab-Thin.ttf */; };
 		DD40BED7218787C600E570DE /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED3218787C600E570DE /* RobotoSlab-Light.ttf */; };
 		DD40BED8218787C600E570DE /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED4218787C600E570DE /* RobotoSlab-Bold.ttf */; };
-		DD40BEDA21878FF900E570DE /* nextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BED921878FF900E570DE /* nextButton.swift */; };
+		DD40BEDA21878FF900E570DE /* buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BED921878FF900E570DE /* buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,7 @@
 		DD40BED2218787C500E570DE /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
 		DD40BED3218787C600E570DE /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		DD40BED4218787C600E570DE /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
-		DD40BED921878FF900E570DE /* nextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextButton.swift; sourceTree = "<group>"; };
+		DD40BED921878FF900E570DE /* buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				DD40BECE2187821700E570DE /* textFields.swift */,
-				DD40BED921878FF900E570DE /* nextButton.swift */,
+				DD40BED921878FF900E570DE /* buttons.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 				DD40BEB5217F767600E570DE /* organizationModel.swift in Sources */,
 				DD40BEC2218268DB00E570DE /* securityVC.swift in Sources */,
 				DD40BEB82182670600E570DE /* selectRegistrantVC.swift in Sources */,
-				DD40BEDA21878FF900E570DE /* nextButton.swift in Sources */,
+				DD40BEDA21878FF900E570DE /* buttons.swift in Sources */,
 				DD40BECF2187821700E570DE /* textFields.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

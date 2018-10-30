@@ -9,11 +9,16 @@
 import Foundation
 import UIKit
 
-class addKids: UIViewController {
+class addKidsVC: UIViewController, buttonDelegate {
+    
+    let addKidsButton = selectionButton()
+    let doneButton = nextButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        view.addSubview(addKidsButton)
+        view.addSubview(doneButton)
+        setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -22,8 +27,27 @@ class addKids: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func setupView() {
-        view.backgroundColor = .red
+    private func setupLayout() {
+        view.backgroundColor = .white
+        
+        addKidsButton.setTitle("Add Kids", for: .normal)
+        addKidsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addKidsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        addKidsButton.addTarget(self, action: #selector(addKidsTapped), for: .touchUpInside)
+        
+        doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        doneButton.delegate = self
+    }
+    
+    @objc func addKidsTapped() {
+        let nextViewController = contactVC()
+        navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    func onButtonTapped() {
+        let nextViewController = securityVC()
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }

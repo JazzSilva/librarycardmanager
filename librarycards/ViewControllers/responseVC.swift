@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-class Response: UIViewController {
+class responseVC: UIViewController, buttonDelegate {
+    
+    let doneButton = nextButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        view.addSubview(doneButton)
+        setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -22,8 +25,18 @@ class Response: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func setupView() {
-        view.backgroundColor = .blue
+    private func setupLayout() {
+        view.backgroundColor = .white
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        doneButton.delegate = self
+    }
+    
+    func onButtonTapped() {
+        ///TODO: Need to replace this with a proper unwind/log out segue
+        let nextViewController = selectMainVC()
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }

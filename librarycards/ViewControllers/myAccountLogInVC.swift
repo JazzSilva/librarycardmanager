@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-class myAccountLogIn: UIViewController {
+class myAccountLoginVC: UIViewController {
+    
+    let loginButton = selectionButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        view.addSubview(loginButton)
+        setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -22,8 +25,19 @@ class myAccountLogIn: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func setupView() {
-        view.backgroundColor = .red
+    private func setupLayout() {
+        view.backgroundColor = .white
+        
+        loginButton.setTitle("Login to My Account", for: .normal)
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+    
+    }
+    
+    @objc func loginTapped() {
+        let nextViewController = myAccountVC()
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }

@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 
-class selectMain: UIViewController {
+class selectMainVC: UIViewController {
     
-    let signUpButton = UIButton()
-    let myAccountButton = UIButton()
+    let signUpButton = selectionButton()
+    let myAccountButton = selectionButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(signUpButton)
+        view.addSubview(myAccountButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -28,40 +30,24 @@ class selectMain: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
-        signUpButton.backgroundColor = .black
-        signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.setTitle("Sign-Up", for: .normal)
-        signUpButton.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 25.0)
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        signUpButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
-        view.addSubview(signUpButton)
-        
-        myAccountButton.backgroundColor = .black
-        myAccountButton.setTitleColor(.white, for: .normal)
-        myAccountButton.setTitle("My Account", for: .normal)
-        myAccountButton.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 25.0)
-        myAccountButton.translatesAutoresizingMaskIntoConstraints = false
-        myAccountButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        myAccountButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        myAccountButton.addTarget(self, action: #selector(myAccountTapped), for: .touchUpInside)
-        view.addSubview(myAccountButton)
-        
         signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         signUpButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         
+        myAccountButton.setTitle("My Account", for: .normal)
         myAccountButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 100).isActive = true
         myAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        myAccountButton.addTarget(self, action: #selector(myAccountTapped), for: .touchUpInside)
     }
     
     @objc func signUpTapped() {
-        let nextViewController = selectRegistrant()
+        let nextViewController = selectRegistrantVC()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func myAccountTapped() {
-        let nextViewController = myAccountLogIn()
+        let nextViewController = myAccountLoginVC()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 

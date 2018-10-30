@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Contact: UIViewController, buttonDelegate {
+class contactVC: UIViewController, buttonDelegate {
     
     let phoneTextField = formTextField()
     let emailTextField = formTextField()
@@ -17,11 +17,9 @@ class Contact: UIViewController, buttonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         view.addSubview(phoneTextField)
         view.addSubview(emailTextField)
         view.addSubview(doneButton)
-        doneButton.delegate = self
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -32,6 +30,8 @@ class Contact: UIViewController, buttonDelegate {
     }
     
     private func setupLayout() {
+        view.backgroundColor = .white
+        
         phoneTextField.placeholder = "Phone Number"
         phoneTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         phoneTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
@@ -42,10 +42,11 @@ class Contact: UIViewController, buttonDelegate {
         
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        doneButton.delegate = self
     }
     
     func onButtonTapped() {
-        let nextViewController = Security()
+        let nextViewController = securityVC()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Select Main-->
+        <!--Select MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="selectMain" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="selectMainVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="861.9140625" y="133.59375"/>
         </scene>
-        <!--Select Registrant-->
+        <!--Select RegistrantVC-->
         <scene sceneID="4RP-Aa-xOj">
             <objects>
-                <viewController id="u5S-y5-lkt" customClass="selectRegistrant" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u5S-y5-lkt" customClass="selectRegistrantVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mbG-rC-p8W">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1532" y="-907"/>
         </scene>
-        <!--Swipe-->
+        <!--SwipeVC-->
         <scene sceneID="dtj-K2-ogO">
             <objects>
-                <viewController id="35P-be-gdp" customClass="Swipe" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="35P-be-gdp" customClass="swipeVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C78-2q-O2o">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="2279" y="-695"/>
         </scene>
-        <!--Parent Log In-->
+        <!--Parent Log InVC-->
         <scene sceneID="qcb-FH-xde">
             <objects>
-                <viewController id="TAW-dF-0Lk" customClass="parentLogIn" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TAW-dF-0Lk" customClass="parentLogInVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fxY-6y-iNx">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="2263" y="-1806"/>
         </scene>
-        <!--Add Kids-->
+        <!--Add KidsVC-->
         <scene sceneID="xSD-yb-mct">
             <objects>
-                <viewController id="8wn-gP-izh" customClass="addKids" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8wn-gP-izh" customClass="addKidsVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqU-CJ-251">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="3005" y="-1789"/>
         </scene>
-        <!--Contact-->
+        <!--ContactVC-->
         <scene sceneID="vTD-ES-K91">
             <objects>
-                <viewController id="MCs-hZ-dwh" customClass="Contact" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MCs-hZ-dwh" customClass="contactVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7qc-cA-pCL">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="3005" y="-678"/>
         </scene>
-        <!--Manual Entry-->
+        <!--Manual EntryVC-->
         <scene sceneID="UqS-IM-Uiw">
             <objects>
-                <viewController id="Zny-Eu-DcL" customClass="manualEntry" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zny-Eu-DcL" customClass="manualEntryVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WH7-eH-SdV">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="2348" y="43"/>
         </scene>
-        <!--Security-->
+        <!--SecurityVC-->
         <scene sceneID="RVp-lb-HU9">
             <objects>
-                <viewController id="q3s-px-rNz" customClass="Security" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q3s-px-rNz" customClass="securityVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R8a-5G-ttc">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="3737" y="-678"/>
         </scene>
-        <!--Response-->
+        <!--ResponseVC-->
         <scene sceneID="r6S-hZ-23j">
             <objects>
-                <viewController id="tTH-Ze-NWM" customClass="Response" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tTH-Ze-NWM" customClass="responseVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fQ1-rO-bFo">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="4406" y="-675"/>
         </scene>
-        <!--My Account Log In-->
+        <!--My Account LoginVC-->
         <scene sceneID="vKT-9j-eoI">
             <objects>
-                <viewController id="W07-rc-LEW" customClass="myAccountLogIn" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="W07-rc-LEW" customClass="myAccountLoginVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63q-ro-R3c">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="1532" y="1088"/>
         </scene>
-        <!--My Account-->
+        <!--My AccountVC-->
         <scene sceneID="259-mX-MxK">
             <objects>
-                <viewController id="BbW-TX-Xna" customClass="myAccount" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BbW-TX-Xna" customClass="myAccountVC" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MFg-vw-5eh">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
