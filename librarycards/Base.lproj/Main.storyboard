@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Select Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="selectMain" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,22 +22,6 @@
                                 <rect key="frame" x="489" y="369" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8Q-We-SrV">
-                                <rect key="frame" x="343" y="369" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign-Up"/>
-                                <connections>
-                                    <segue destination="u5S-y5-lkt" kind="show" id="TWC-bs-Gth"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN2-dv-eaX">
-                                <rect key="frame" x="614" y="369" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="My Account"/>
-                                <connections>
-                                    <segue destination="W07-rc-LEW" kind="show" id="YgN-kI-QXp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -48,11 +32,11 @@
             </objects>
             <point key="canvasLocation" x="861.9140625" y="133.59375"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Registrant-->
         <scene sceneID="4RP-Aa-xOj">
             <objects>
-                <viewController id="u5S-y5-lkt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="mbG-rC-p8W">
+                <viewController id="u5S-y5-lkt" customClass="selectRegistrant" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mbG-rC-p8W">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -81,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1532" y="-907"/>
         </scene>
-        <!--View Controller-->
+        <!--Swipe-->
         <scene sceneID="dtj-K2-ogO">
             <objects>
-                <viewController id="35P-be-gdp" sceneMemberID="viewController">
+                <viewController id="35P-be-gdp" customClass="Swipe" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C78-2q-O2o">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="2279" y="-695"/>
         </scene>
-        <!--View Controller-->
+        <!--Parent Log In-->
         <scene sceneID="qcb-FH-xde">
             <objects>
-                <viewController id="TAW-dF-0Lk" sceneMemberID="viewController">
+                <viewController id="TAW-dF-0Lk" customClass="parentLogIn" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fxY-6y-iNx">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="2263" y="-1806"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Kids-->
         <scene sceneID="xSD-yb-mct">
             <objects>
-                <viewController id="8wn-gP-izh" sceneMemberID="viewController">
+                <viewController id="8wn-gP-izh" customClass="addKids" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqU-CJ-251">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="3005" y="-1789"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact-->
         <scene sceneID="vTD-ES-K91">
             <objects>
-                <viewController id="MCs-hZ-dwh" sceneMemberID="viewController">
+                <viewController id="MCs-hZ-dwh" customClass="Contact" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7qc-cA-pCL">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,23 +181,13 @@
             </objects>
             <point key="canvasLocation" x="3005" y="-678"/>
         </scene>
-        <!--View Controller-->
+        <!--Manual Entry-->
         <scene sceneID="UqS-IM-Uiw">
             <objects>
-                <viewController id="Zny-Eu-DcL" sceneMemberID="viewController">
+                <viewController id="Zny-Eu-DcL" customClass="manualEntry" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WH7-eH-SdV">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rl-S0-gYO">
-                                <rect key="frame" x="452" y="439" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="entered info done"/>
-                                <connections>
-                                    <segue destination="MCs-hZ-dwh" kind="show" id="37L-rK-x43"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GUf-0O-u2F"/>
                     </view>
@@ -222,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="2348" y="43"/>
         </scene>
-        <!--View Controller-->
+        <!--Security-->
         <scene sceneID="RVp-lb-HU9">
             <objects>
-                <viewController id="q3s-px-rNz" sceneMemberID="viewController">
+                <viewController id="q3s-px-rNz" customClass="Security" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R8a-5G-ttc">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="3737" y="-678"/>
         </scene>
-        <!--View Controller-->
+        <!--Response-->
         <scene sceneID="r6S-hZ-23j">
             <objects>
-                <viewController id="tTH-Ze-NWM" sceneMemberID="viewController">
+                <viewController id="tTH-Ze-NWM" customClass="Response" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fQ1-rO-bFo">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="4406" y="-675"/>
         </scene>
-        <!--View Controller-->
+        <!--My Account Log In-->
         <scene sceneID="vKT-9j-eoI">
             <objects>
-                <viewController id="W07-rc-LEW" sceneMemberID="viewController">
+                <viewController id="W07-rc-LEW" customClass="myAccountLogIn" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63q-ro-R3c">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="1532" y="1088"/>
         </scene>
-        <!--View Controller-->
+        <!--My Account-->
         <scene sceneID="259-mX-MxK">
             <objects>
-                <viewController id="BbW-TX-Xna" sceneMemberID="viewController">
+                <viewController id="BbW-TX-Xna" customClass="myAccount" customModule="librarycards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MFg-vw-5eh">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,9 +288,6 @@
                                 <rect key="frame" x="794" y="456" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="done/log-out"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="8RA-Ht-Vul"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -371,10 +342,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ahj-OO-lHC"/>
-        <segue reference="37L-rK-x43"/>
+        <segue reference="6JU-Q0-Vqy"/>
         <segue reference="7mK-y9-SzH"/>
         <segue reference="U3v-7j-XL5"/>
-        <segue reference="8RA-Ht-Vul"/>
     </inferredMetricsTieBreakers>
 </document>

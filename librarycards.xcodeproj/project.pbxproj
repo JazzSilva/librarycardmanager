@@ -16,6 +16,24 @@
 		B053B2322174ED2C00243D4C /* librarycardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B2312174ED2C00243D4C /* librarycardsUITests.swift */; };
 		DD40BEB1217E296F00E570DE /* libraryCardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB0217E296F00E570DE /* libraryCardManager.swift */; };
 		DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB2217E2B2F00E570DE /* patronModel.swift */; };
+		DD40BEB5217F767600E570DE /* organizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB4217F767600E570DE /* organizationModel.swift */; };
+		DD40BEB82182670600E570DE /* selectRegistrantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB72182670600E570DE /* selectRegistrantVC.swift */; };
+		DD40BEBA2182680800E570DE /* selectMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB92182680800E570DE /* selectMainVC.swift */; };
+		DD40BEBC2182684C00E570DE /* parentLogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEBB2182684C00E570DE /* parentLogInVC.swift */; };
+		DD40BEBE2182689200E570DE /* addKidsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEBD2182689200E570DE /* addKidsVC.swift */; };
+		DD40BEC0218268C700E570DE /* contactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEBF218268C700E570DE /* contactVC.swift */; };
+		DD40BEC2218268DB00E570DE /* securityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC1218268DB00E570DE /* securityVC.swift */; };
+		DD40BEC4218268ED00E570DE /* responseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC3218268ED00E570DE /* responseVC.swift */; };
+		DD40BEC62182698A00E570DE /* swipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC52182698A00E570DE /* swipeVC.swift */; };
+		DD40BEC8218269A800E570DE /* manualEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC7218269A800E570DE /* manualEntryVC.swift */; };
+		DD40BECA21826A5300E570DE /* myAccountLogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC921826A5300E570DE /* myAccountLogInVC.swift */; };
+		DD40BECC21826A6900E570DE /* myAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BECB21826A6900E570DE /* myAccountVC.swift */; };
+		DD40BECF2187821700E570DE /* textFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BECE2187821700E570DE /* textFields.swift */; };
+		DD40BED5218787C600E570DE /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED1218787C500E570DE /* RobotoSlab-Regular.ttf */; };
+		DD40BED6218787C600E570DE /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED2218787C500E570DE /* RobotoSlab-Thin.ttf */; };
+		DD40BED7218787C600E570DE /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED3218787C600E570DE /* RobotoSlab-Light.ttf */; };
+		DD40BED8218787C600E570DE /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED4218787C600E570DE /* RobotoSlab-Bold.ttf */; };
+		DD40BEDA21878FF900E570DE /* nextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BED921878FF900E570DE /* nextButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +69,24 @@
 		B053B2332174ED2C00243D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD40BEB0217E296F00E570DE /* libraryCardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libraryCardManager.swift; sourceTree = "<group>"; };
 		DD40BEB2217E2B2F00E570DE /* patronModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patronModel.swift; sourceTree = "<group>"; };
+		DD40BEB4217F767600E570DE /* organizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = organizationModel.swift; sourceTree = "<group>"; };
+		DD40BEB72182670600E570DE /* selectRegistrantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectRegistrantVC.swift; sourceTree = "<group>"; };
+		DD40BEB92182680800E570DE /* selectMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectMainVC.swift; sourceTree = "<group>"; };
+		DD40BEBB2182684C00E570DE /* parentLogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentLogInVC.swift; sourceTree = "<group>"; };
+		DD40BEBD2182689200E570DE /* addKidsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addKidsVC.swift; sourceTree = "<group>"; };
+		DD40BEBF218268C700E570DE /* contactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactVC.swift; sourceTree = "<group>"; };
+		DD40BEC1218268DB00E570DE /* securityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = securityVC.swift; sourceTree = "<group>"; };
+		DD40BEC3218268ED00E570DE /* responseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseVC.swift; sourceTree = "<group>"; };
+		DD40BEC52182698A00E570DE /* swipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipeVC.swift; sourceTree = "<group>"; };
+		DD40BEC7218269A800E570DE /* manualEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manualEntryVC.swift; sourceTree = "<group>"; };
+		DD40BEC921826A5300E570DE /* myAccountLogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAccountLogInVC.swift; sourceTree = "<group>"; };
+		DD40BECB21826A6900E570DE /* myAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAccountVC.swift; sourceTree = "<group>"; };
+		DD40BECE2187821700E570DE /* textFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFields.swift; sourceTree = "<group>"; };
+		DD40BED1218787C500E570DE /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
+		DD40BED2218787C500E570DE /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
+		DD40BED3218787C600E570DE /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
+		DD40BED4218787C600E570DE /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
+		DD40BED921878FF900E570DE /* nextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +137,14 @@
 		B053B2102174ED2A00243D4C /* librarycards */ = {
 			isa = PBXGroup;
 			children = (
+				DD40BED0218787BA00E570DE /* Fonts */,
+				DD40BECD218781FE00E570DE /* UIElements */,
+				DD40BEB62182669400E570DE /* ViewControllers */,
 				B053B2112174ED2A00243D4C /* AppDelegate.swift */,
 				B053B2132174ED2A00243D4C /* ViewController.swift */,
 				B053B2152174ED2A00243D4C /* Main.storyboard */,
 				DD40BEB0217E296F00E570DE /* libraryCardManager.swift */,
+				DD40BEB4217F767600E570DE /* organizationModel.swift */,
 				DD40BEB2217E2B2F00E570DE /* patronModel.swift */,
 				B053B2182174ED2B00243D4C /* Assets.xcassets */,
 				B053B21A2174ED2B00243D4C /* LaunchScreen.storyboard */,
@@ -129,6 +169,44 @@
 				B053B2332174ED2C00243D4C /* Info.plist */,
 			);
 			path = librarycardsUITests;
+			sourceTree = "<group>";
+		};
+		DD40BEB62182669400E570DE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD40BEB72182670600E570DE /* selectRegistrantVC.swift */,
+				DD40BEB92182680800E570DE /* selectMainVC.swift */,
+				DD40BEBB2182684C00E570DE /* parentLogInVC.swift */,
+				DD40BEBD2182689200E570DE /* addKidsVC.swift */,
+				DD40BEBF218268C700E570DE /* contactVC.swift */,
+				DD40BEC1218268DB00E570DE /* securityVC.swift */,
+				DD40BEC3218268ED00E570DE /* responseVC.swift */,
+				DD40BEC52182698A00E570DE /* swipeVC.swift */,
+				DD40BEC7218269A800E570DE /* manualEntryVC.swift */,
+				DD40BEC921826A5300E570DE /* myAccountLogInVC.swift */,
+				DD40BECB21826A6900E570DE /* myAccountVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DD40BECD218781FE00E570DE /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				DD40BECE2187821700E570DE /* textFields.swift */,
+				DD40BED921878FF900E570DE /* nextButton.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		DD40BED0218787BA00E570DE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DD40BED4218787C600E570DE /* RobotoSlab-Bold.ttf */,
+				DD40BED3218787C600E570DE /* RobotoSlab-Light.ttf */,
+				DD40BED1218787C500E570DE /* RobotoSlab-Regular.ttf */,
+				DD40BED2218787C500E570DE /* RobotoSlab-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +313,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD40BED5218787C600E570DE /* RobotoSlab-Regular.ttf in Resources */,
+				DD40BED6218787C600E570DE /* RobotoSlab-Thin.ttf in Resources */,
+				DD40BED8218787C600E570DE /* RobotoSlab-Bold.ttf in Resources */,
+				DD40BED7218787C600E570DE /* RobotoSlab-Light.ttf in Resources */,
 				B053B21C2174ED2B00243D4C /* LaunchScreen.storyboard in Resources */,
 				B053B2192174ED2B00243D4C /* Assets.xcassets in Resources */,
 				B053B2172174ED2A00243D4C /* Main.storyboard in Resources */,
@@ -262,10 +344,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD40BECA21826A5300E570DE /* myAccountLogInVC.swift in Sources */,
 				B053B2142174ED2A00243D4C /* ViewController.swift in Sources */,
 				DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */,
+				DD40BEBC2182684C00E570DE /* parentLogInVC.swift in Sources */,
+				DD40BEC4218268ED00E570DE /* responseVC.swift in Sources */,
+				DD40BEC0218268C700E570DE /* contactVC.swift in Sources */,
+				DD40BEC8218269A800E570DE /* manualEntryVC.swift in Sources */,
 				B053B2122174ED2A00243D4C /* AppDelegate.swift in Sources */,
+				DD40BECC21826A6900E570DE /* myAccountVC.swift in Sources */,
+				DD40BEC62182698A00E570DE /* swipeVC.swift in Sources */,
+				DD40BEBA2182680800E570DE /* selectMainVC.swift in Sources */,
 				DD40BEB1217E296F00E570DE /* libraryCardManager.swift in Sources */,
+				DD40BEBE2182689200E570DE /* addKidsVC.swift in Sources */,
+				DD40BEB5217F767600E570DE /* organizationModel.swift in Sources */,
+				DD40BEC2218268DB00E570DE /* securityVC.swift in Sources */,
+				DD40BEB82182670600E570DE /* selectRegistrantVC.swift in Sources */,
+				DD40BEDA21878FF900E570DE /* nextButton.swift in Sources */,
+				DD40BECF2187821700E570DE /* textFields.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
