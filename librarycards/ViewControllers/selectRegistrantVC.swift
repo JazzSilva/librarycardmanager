@@ -43,6 +43,8 @@ class selectRegistrantVC: UIViewController {
     
     @objc func registeringMyselfTapped() {
         let nextViewController = swipeVC()
+        let newPatron = Patron()
+        nextViewController.patron = newPatron
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

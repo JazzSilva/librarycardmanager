@@ -11,6 +11,7 @@ import UIKit
 
 class swipeVC: UIViewController {
     
+    weak var patron: Patron?
     let swipeCardButton = selectionButton()
     let manuallyEnterButton = selectionButton()
     
@@ -44,11 +45,13 @@ class swipeVC: UIViewController {
     
     @objc func swipeTapped() {
         let nextViewController = contactVC()
+        nextViewController.patron = self.patron
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func manuallyEnterTapped() {
         let nextViewController = manualEntryVC()
+        nextViewController.patron = self.patron
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

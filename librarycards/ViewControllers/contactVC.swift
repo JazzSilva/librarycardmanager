@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class contactVC: UIViewController, buttonDelegate {
+class contactVC: UIViewController, buttonDelegate, formUpdateDelegate {
     
+    weak var patron: Patron?
     let phoneTextField = formTextField()
     let emailTextField = formTextField()
     let doneButton = nextButton()
@@ -32,10 +33,14 @@ class contactVC: UIViewController, buttonDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        phoneTextField.formDelegate = self
+        phoneTextField.accessibilityLabel = "phoneNumber"
         phoneTextField.placeholder = "Phone Number"
         phoneTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         phoneTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
         
+        emailTextField.formDelegate = self
+        emailTextField.accessibilityLabel = "email"
         emailTextField.placeholder = "Email Address"
         emailTextField.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 100).isActive = true
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -47,6 +52,7 @@ class contactVC: UIViewController, buttonDelegate {
     
     func onButtonTapped() {
         let nextViewController = securityVC()
+        nextViewController.patron = self.patron
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

@@ -10,13 +10,21 @@ import Foundation
 import UIKit
 
 
+protocol formUpdateDelegate: class {
+    func didUpdateData()
+    func printData()
+}
+
 // This is a custom class of UITextField that is used on all patron registration views
 
 class formTextField: UITextField {
     
+    weak var formDelegate: formUpdateDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         formatTextField()
+        self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,4 +41,17 @@ class formTextField: UITextField {
         self.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.formDelegate?.didUpdateData()
+    }
+    
+}
+
+extension UIViewController {
+    func didUpdateData() {
+        print("the data did upate")
+    }
+    func printData() {
+        print("this prints data maybe")
+    }
 }

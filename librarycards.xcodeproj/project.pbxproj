@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B053B2122174ED2A00243D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B2112174ED2A00243D4C /* AppDelegate.swift */; };
-		B053B2142174ED2A00243D4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B2132174ED2A00243D4C /* ViewController.swift */; };
-		B053B2172174ED2A00243D4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B053B2152174ED2A00243D4C /* Main.storyboard */; };
+		B053B2142174ED2A00243D4C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B2132174ED2A00243D4C /* RootViewController.swift */; };
 		B053B2192174ED2B00243D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B053B2182174ED2B00243D4C /* Assets.xcassets */; };
 		B053B21C2174ED2B00243D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B053B21A2174ED2B00243D4C /* LaunchScreen.storyboard */; };
 		B053B2272174ED2C00243D4C /* librarycardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B2262174ED2C00243D4C /* librarycardsTests.swift */; };
@@ -34,6 +33,9 @@
 		DD40BED7218787C600E570DE /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED3218787C600E570DE /* RobotoSlab-Light.ttf */; };
 		DD40BED8218787C600E570DE /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED4218787C600E570DE /* RobotoSlab-Bold.ttf */; };
 		DD40BEDA21878FF900E570DE /* buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BED921878FF900E570DE /* buttons.swift */; };
+		DD40BEDC218B765C00E570DE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDB218B765C00E570DE /* SplashViewController.swift */; };
+		DD40BEDE218B766A00E570DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDD218B766A00E570DE /* LoginViewController.swift */; };
+		DD40BEE0218B83B500E570DE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDF218B83B500E570DE /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +58,7 @@
 /* Begin PBXFileReference section */
 		B053B20E2174ED2A00243D4C /* librarycards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = librarycards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B053B2112174ED2A00243D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B053B2132174ED2A00243D4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B053B2162174ED2A00243D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B053B2132174ED2A00243D4C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		B053B2182174ED2B00243D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B053B21B2174ED2B00243D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B053B21D2174ED2B00243D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +88,9 @@
 		DD40BED3218787C600E570DE /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		DD40BED4218787C600E570DE /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
 		DD40BED921878FF900E570DE /* buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttons.swift; sourceTree = "<group>"; };
+		DD40BEDB218B765C00E570DE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DD40BEDD218B766A00E570DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DD40BEDF218B83B500E570DE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,15 +144,17 @@
 				DD40BED0218787BA00E570DE /* Fonts */,
 				DD40BECD218781FE00E570DE /* UIElements */,
 				DD40BEB62182669400E570DE /* ViewControllers */,
-				B053B2112174ED2A00243D4C /* AppDelegate.swift */,
-				B053B2132174ED2A00243D4C /* ViewController.swift */,
-				B053B2152174ED2A00243D4C /* Main.storyboard */,
 				DD40BEB0217E296F00E570DE /* libraryCardManager.swift */,
 				DD40BEB4217F767600E570DE /* organizationModel.swift */,
 				DD40BEB2217E2B2F00E570DE /* patronModel.swift */,
 				B053B2182174ED2B00243D4C /* Assets.xcassets */,
 				B053B21A2174ED2B00243D4C /* LaunchScreen.storyboard */,
 				B053B21D2174ED2B00243D4C /* Info.plist */,
+				B053B2112174ED2A00243D4C /* AppDelegate.swift */,
+				B053B2132174ED2A00243D4C /* RootViewController.swift */,
+				DD40BEDB218B765C00E570DE /* SplashViewController.swift */,
+				DD40BEDD218B766A00E570DE /* LoginViewController.swift */,
+				DD40BEDF218B83B500E570DE /* MainViewController.swift */,
 			);
 			path = librarycards;
 			sourceTree = "<group>";
@@ -319,7 +325,6 @@
 				DD40BED7218787C600E570DE /* RobotoSlab-Light.ttf in Resources */,
 				B053B21C2174ED2B00243D4C /* LaunchScreen.storyboard in Resources */,
 				B053B2192174ED2B00243D4C /* Assets.xcassets in Resources */,
-				B053B2172174ED2A00243D4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,20 +349,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD40BEE0218B83B500E570DE /* MainViewController.swift in Sources */,
 				DD40BECA21826A5300E570DE /* myAccountLogInVC.swift in Sources */,
-				B053B2142174ED2A00243D4C /* ViewController.swift in Sources */,
+				B053B2142174ED2A00243D4C /* RootViewController.swift in Sources */,
 				DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */,
 				DD40BEBC2182684C00E570DE /* parentLogInVC.swift in Sources */,
 				DD40BEC4218268ED00E570DE /* responseVC.swift in Sources */,
 				DD40BEC0218268C700E570DE /* contactVC.swift in Sources */,
 				DD40BEC8218269A800E570DE /* manualEntryVC.swift in Sources */,
 				B053B2122174ED2A00243D4C /* AppDelegate.swift in Sources */,
+				DD40BEDE218B766A00E570DE /* LoginViewController.swift in Sources */,
 				DD40BECC21826A6900E570DE /* myAccountVC.swift in Sources */,
 				DD40BEC62182698A00E570DE /* swipeVC.swift in Sources */,
 				DD40BEBA2182680800E570DE /* selectMainVC.swift in Sources */,
 				DD40BEB1217E296F00E570DE /* libraryCardManager.swift in Sources */,
 				DD40BEBE2182689200E570DE /* addKidsVC.swift in Sources */,
 				DD40BEB5217F767600E570DE /* organizationModel.swift in Sources */,
+				DD40BEDC218B765C00E570DE /* SplashViewController.swift in Sources */,
 				DD40BEC2218268DB00E570DE /* securityVC.swift in Sources */,
 				DD40BEB82182670600E570DE /* selectRegistrantVC.swift in Sources */,
 				DD40BEDA21878FF900E570DE /* buttons.swift in Sources */,
@@ -397,14 +405,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B053B2152174ED2A00243D4C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B053B2162174ED2A00243D4C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B053B21A2174ED2B00243D4C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -537,6 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7H6M6RY2G;
 				INFOPLIST_FILE = librarycards/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,6 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7H6M6RY2G;
 				INFOPLIST_FILE = librarycards/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

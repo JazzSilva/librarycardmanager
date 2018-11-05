@@ -8,7 +8,34 @@
 
 import Foundation
 
-struct Patron {
+class Patron {
+    
+    func didUpdateData(dataType: String, data: String) {
+        self.myDict.updateValue(data, forKey: dataType)
+        printData()
+    }
+    
+    func printData() {
+        for (key, values) in self.myDict {
+            print(key, values)
+        }
+    }
+    
+    func submitData() {
+        print("submitted data to this address")
+    }
+    
+    var myDict: [String: String?] = [
+        "firstName": nil,
+        "middleName": nil,
+        "lastName": nil,
+        "phoneNumber": nil,
+        "email": nil,
+        "address": nil,
+        "city": nil,
+        "state": nil,
+        "zip": nil
+    ]
     
     static var identifierFactory = 0
     
@@ -39,5 +66,6 @@ struct Patron {
     
     init() {
         self.identifier = Patron.getUniqueIdentifier()
+        //later can pass in dictionary of key:value pairs from organization settings
     }
 }

@@ -30,6 +30,10 @@ class selectMainVC: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        title = "Main Screen"
+        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logout))
+        navigationItem.setLeftBarButton(logoutButton, animated: true)
+        
         signUpButton.setTitle("Sign-Up", for: .normal)
         signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         signUpButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
@@ -49,6 +53,14 @@ class selectMainVC: UIViewController {
     @objc func myAccountTapped() {
         let nextViewController = myAccountLoginVC()
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc
+    private func logout() {
+        // clear the user session (example only, not for the production)
+        UserDefaults.standard.set(false, forKey: "LOGGED_IN")
+        AppDelegate.shared.rootViewController.switchToLogout()
+        // navigate to the Main Screen
     }
 
 }

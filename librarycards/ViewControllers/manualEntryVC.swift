@@ -9,8 +9,13 @@
 import Foundation
 import UIKit
 
-class manualEntryVC: UIViewController, buttonDelegate {
+class manualEntryVC: UIViewController, buttonDelegate, formUpdateDelegate {
     
+    func didUpdateData(data: String) {
+        print("data is", data)
+    }
+    
+    weak var patron: Patron?
     let firstNameTextField = formTextField()
     let lastNameTextField = formTextField()
     let address1TextField = formTextField()
@@ -34,14 +39,20 @@ class manualEntryVC: UIViewController, buttonDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        firstNameTextField.formDelegate = self
+        firstNameTextField.accessibilityLabel = "firstName"
         firstNameTextField.placeholder = "First Name"
         firstNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         firstNameTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
         
+        lastNameTextField.formDelegate = self
+        lastNameTextField.accessibilityLabel = "lastName"
         lastNameTextField.placeholder = "Last Name"
         lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 50).isActive = true
         lastNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
+        address1TextField.formDelegate = self
+        address1TextField.accessibilityLabel = "address"
         address1TextField.placeholder = "Address"
         address1TextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 50).isActive = true
         address1TextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -53,7 +64,9 @@ class manualEntryVC: UIViewController, buttonDelegate {
     
     func onButtonTapped() {
         let nextViewController = contactVC()
+        nextViewController.patron = self.patron
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }
+

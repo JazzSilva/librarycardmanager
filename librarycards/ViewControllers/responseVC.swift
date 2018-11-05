@@ -11,6 +11,8 @@ import UIKit
 
 class responseVC: UIViewController, buttonDelegate {
     
+    weak var patron: Patron?
+    
     let doneButton = nextButton()
     
     override func viewDidLoad() {

@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class securityVC: UIViewController, buttonDelegate {
+class securityVC: UIViewController, buttonDelegate, formUpdateDelegate {
     
+    weak var patron: Patron?
     let pinTextField = formTextField()
     let codeWordTextField = formTextField()
     let doneButton = nextButton()
@@ -32,10 +33,12 @@ class securityVC: UIViewController, buttonDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        pinTextField.formDelegate = self
         pinTextField.placeholder = "Pin Number"
         pinTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         pinTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
         
+        codeWordTextField.formDelegate = self
         codeWordTextField.placeholder = "Code Word"
         codeWordTextField.topAnchor.constraint(equalTo: pinTextField.bottomAnchor, constant: 100).isActive = true
         codeWordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -48,6 +51,7 @@ class securityVC: UIViewController, buttonDelegate {
     
     func onButtonTapped() {
         let nextViewController = responseVC()
+        nextViewController.patron = self.patron
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
