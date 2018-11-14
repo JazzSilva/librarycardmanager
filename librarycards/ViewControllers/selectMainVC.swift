@@ -11,6 +11,7 @@ import UIKit
 
 class selectMainVC: UIViewController {
     
+    var manager: libraryCardManager?
     let signUpButton = selectionButton()
     let myAccountButton = selectionButton()
     
@@ -18,8 +19,15 @@ class selectMainVC: UIViewController {
         super.viewDidLoad()
         view.addSubview(signUpButton)
         view.addSubview(myAccountButton)
+        UserDefaults.standard.register(defaults: [String : Any]())
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        manager = libraryCardManager()
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,8 +38,12 @@ class selectMainVC: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
-        title = "Main Screen"
-        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logout))
+        //Pull the branch name from user settings to display
+        let userDefaults = UserDefaults.standard
+        let branchName = userDefaults.string(forKey: "branch_name")!
+        title = "Welcome to \(branchName)!"
+        
+        let logoutButton = UIBarButtonItem(title: "Staff", style: .plain, target: self, action: #selector(logout))
         navigationItem.setLeftBarButton(logoutButton, animated: true)
         
         signUpButton.setTitle("Sign-Up", for: .normal)
@@ -47,11 +59,13 @@ class selectMainVC: UIViewController {
     
     @objc func signUpTapped() {
         let nextViewController = selectRegistrantVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func myAccountTapped() {
         let nextViewController = myAccountLoginVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

@@ -9,10 +9,8 @@
 import Foundation
 import UIKit
 
-
 protocol formUpdateDelegate: class {
     func didUpdateData()
-    func printData()
 }
 
 // This is a custom class of UITextField that is used on all patron registration views
@@ -47,11 +45,8 @@ class formTextField: UITextField {
     
 }
 
-extension UIViewController {
+extension libraryCardManager {
     func didUpdateData() {
-        print("the data did upate")
-    }
-    func printData() {
-        print("this prints data maybe")
+        print("patron information updated")
     }
 }

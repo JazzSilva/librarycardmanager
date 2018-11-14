@@ -11,7 +11,7 @@ import UIKit
 
 class swipeVC: UIViewController {
     
-    weak var patron: Patron?
+    var manager: libraryCardManager?
     let swipeCardButton = selectionButton()
     let manuallyEnterButton = selectionButton()
     
@@ -21,6 +21,8 @@ class swipeVC: UIViewController {
         view.addSubview(manuallyEnterButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,13 +47,13 @@ class swipeVC: UIViewController {
     
     @objc func swipeTapped() {
         let nextViewController = contactVC()
-        nextViewController.patron = self.patron
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func manuallyEnterTapped() {
         let nextViewController = manualEntryVC()
-        nextViewController.patron = self.patron
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

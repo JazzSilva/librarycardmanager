@@ -11,6 +11,7 @@ import UIKit
 
 class myAccountLoginVC: UIViewController {
     
+    var manager: libraryCardManager?
     let loginButton = selectionButton()
     
     override func viewDidLoad() {
@@ -18,6 +19,7 @@ class myAccountLoginVC: UIViewController {
         view.addSubview(loginButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,6 +39,7 @@ class myAccountLoginVC: UIViewController {
     
     @objc func loginTapped() {
         let nextViewController = myAccountVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

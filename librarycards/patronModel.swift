@@ -10,32 +10,13 @@ import Foundation
 
 class Patron {
     
-    func didUpdateData(dataType: String, data: String) {
-        self.myDict.updateValue(data, forKey: dataType)
-        printData()
-    }
-    
-    func printData() {
-        for (key, values) in self.myDict {
-            print(key, values)
-        }
+    func printPatron() {
+        print(self.firstName ?? "no first", self.middleName ?? "no middle", self.lastName ?? "no last", self.birthday ?? "no birthday", self.phone ?? "no phone", self.email ?? "no email", self.address ?? "no address", self.city ?? "no city", self.state ?? "no state", self.zip ?? "no zip")
     }
     
     func submitData() {
         print("submitted data to this address")
     }
-    
-    var myDict: [String: String?] = [
-        "firstName": nil,
-        "middleName": nil,
-        "lastName": nil,
-        "phoneNumber": nil,
-        "email": nil,
-        "address": nil,
-        "city": nil,
-        "state": nil,
-        "zip": nil
-    ]
     
     static var identifierFactory = 0
     
@@ -50,6 +31,9 @@ class Patron {
     var birthday: NSDate?
     var phone: String?
     var email: String?
+    
+    var pin: String?
+    var codeWord: String?
     
     var address: String?
     var city: String?

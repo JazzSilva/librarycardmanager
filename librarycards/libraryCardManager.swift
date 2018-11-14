@@ -8,17 +8,16 @@
 
 import Foundation
 
-class libraryCardManager {
-    
-    var patron: Patron?
+class libraryCardManager: formUpdateDelegate {
     
     //This is our patron queue. It is used primarily for adding children to the same parent application.
     var patronQueue = [Patron]()
+    var activePatron: Patron?
     
     func beginApplication() {
         //Create a patron and add them to our patron queue
-        self.patron = Patron()
-        patronQueue.append(self.patron!)
+        self.activePatron = Patron()
+        patronQueue.append(activePatron!)
     }
     
     func submitApplication() {
@@ -42,6 +41,12 @@ class libraryCardManager {
     func getPatronData() {
         //Lookup a patron and assign them to our class
 
+    }
+    
+    func printPatron() {
+        for patron in patronQueue {
+            print("First Name: \(patron.firstName ?? "")", "Middle Name: \(patron.middleName ?? "")", "Last Name: \(patron.lastName ?? "")", "Birthday: \(patron.birthday ?? NSDate())", "Phone: \(patron.phone ?? "")", "Email: \(patron.email ?? "")", "Address: \(patron.address ?? "")", "City: \(patron.city ?? "")", "State: \(patron.state ?? "")", "Zip: \(patron.zip ?? "")", "Pin: \(patron.pin ?? "")", "Code: \(patron.codeWord ?? "")")
+        }
     }
     
 }

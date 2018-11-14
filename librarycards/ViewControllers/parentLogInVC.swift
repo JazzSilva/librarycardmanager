@@ -11,6 +11,7 @@ import UIKit
 
 class parentLogInVC: UIViewController {
     
+    var manager: libraryCardManager?
     let signInParentButton = selectionButton()
     let parentRegistrationButton = selectionButton()
     
@@ -19,6 +20,7 @@ class parentLogInVC: UIViewController {
         view.addSubview(signInParentButton)
         view.addSubview(parentRegistrationButton)
         setupLayout()
+        manager?.printPatron()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -44,11 +46,13 @@ class parentLogInVC: UIViewController {
     
     @objc func signInParentTapped() {
         let nextViewController = addKidsVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func parentRegistrationTapped() {
         let nextViewController = swipeVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

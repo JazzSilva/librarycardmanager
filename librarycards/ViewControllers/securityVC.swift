@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class securityVC: UIViewController, buttonDelegate, formUpdateDelegate {
+class securityVC: UIViewController, buttonDelegate {
     
-    weak var patron: Patron?
+    var manager: libraryCardManager?
     let pinTextField = formTextField()
     let codeWordTextField = formTextField()
     let doneButton = nextButton()
@@ -23,6 +23,8 @@ class securityVC: UIViewController, buttonDelegate, formUpdateDelegate {
         view.addSubview(doneButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,13 +35,24 @@ class securityVC: UIViewController, buttonDelegate, formUpdateDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
-        pinTextField.formDelegate = self
-        pinTextField.placeholder = "Pin Number"
+        pinTextField.formDelegate = self.manager
+        pinTextField.isSecureTextEntry = true
+        if (self.manager?.activePatron?.pin != nil && self.manager?.activePatron?.pin != "") {
+            pinTextField.text = self.manager?.activePatron?.pin
+        }
+        else {
+            pinTextField.placeholder = "Pin"
+        }
         pinTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         pinTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
         
-        codeWordTextField.formDelegate = self
-        codeWordTextField.placeholder = "Code Word"
+        codeWordTextField.formDelegate = self.manager
+        if (self.manager?.activePatron?.codeWord != nil && self.manager?.activePatron?.codeWord != "") {
+            codeWordTextField.text = self.manager?.activePatron?.codeWord
+        }
+        else {
+            codeWordTextField.placeholder = "Mother's Maiden Name"
+        }
         codeWordTextField.topAnchor.constraint(equalTo: pinTextField.bottomAnchor, constant: 100).isActive = true
         codeWordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
@@ -51,7 +64,9 @@ class securityVC: UIViewController, buttonDelegate, formUpdateDelegate {
     
     func onButtonTapped() {
         let nextViewController = responseVC()
-        nextViewController.patron = self.patron
+        nextViewController.manager = self.manager
+        manager?.activePatron?.pin = pinTextField.text
+        manager?.activePatron?.codeWord = codeWordTextField.text
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

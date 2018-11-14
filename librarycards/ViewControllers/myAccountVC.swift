@@ -11,6 +11,7 @@ import UIKit
 
 class myAccountVC: UIViewController, buttonDelegate {
     
+    var manager: libraryCardManager?
     let doneButton = nextButton()
     
     override func viewDidLoad() {
@@ -18,6 +19,7 @@ class myAccountVC: UIViewController, buttonDelegate {
         view.addSubview(doneButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,6 +39,7 @@ class myAccountVC: UIViewController, buttonDelegate {
     func onButtonTapped() {
         ///TODO: Need to replace this with a proper unwind/log out segue
         let nextViewController = selectMainVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

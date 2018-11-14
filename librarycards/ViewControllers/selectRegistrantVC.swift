@@ -11,6 +11,7 @@ import UIKit
 
 class selectRegistrantVC: UIViewController {
     
+    var manager: libraryCardManager?
     let registeringMyselfButton = selectionButton()
     let registeringChildButton = selectionButton()
     
@@ -18,6 +19,7 @@ class selectRegistrantVC: UIViewController {
         super.viewDidLoad()
         view.addSubview(registeringMyselfButton)
         view.addSubview(registeringChildButton)
+        manager?.printPatron()
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -43,13 +45,14 @@ class selectRegistrantVC: UIViewController {
     
     @objc func registeringMyselfTapped() {
         let nextViewController = swipeVC()
-        let newPatron = Patron()
-        nextViewController.patron = newPatron
+        manager?.beginApplication()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func registeringChildTapped() {
         let nextViewController = parentLogInVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

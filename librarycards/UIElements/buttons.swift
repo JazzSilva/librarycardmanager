@@ -56,7 +56,7 @@ class selectionButton: UIButton {
     }
     
     func formatButton() {
-        self.backgroundColor = .black
+        self.backgroundColor = .blue
         self.setTitleColor(.white, for: .normal)
         self.setTitle("Default", for: .normal)
         self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 25.0)

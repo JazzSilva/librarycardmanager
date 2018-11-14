@@ -11,6 +11,7 @@ import UIKit
 
 class addKidsVC: UIViewController, buttonDelegate {
     
+    var manager: libraryCardManager?
     let addKidsButton = selectionButton()
     let doneButton = nextButton()
     
@@ -20,6 +21,8 @@ class addKidsVC: UIViewController, buttonDelegate {
         view.addSubview(doneButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,11 +45,13 @@ class addKidsVC: UIViewController, buttonDelegate {
     
     @objc func addKidsTapped() {
         let nextViewController = contactVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     func onButtonTapped() {
         let nextViewController = securityVC()
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

@@ -36,6 +36,7 @@
 		DD40BEDC218B765C00E570DE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDB218B765C00E570DE /* SplashViewController.swift */; };
 		DD40BEDE218B766A00E570DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDD218B766A00E570DE /* LoginViewController.swift */; };
 		DD40BEE0218B83B500E570DE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDF218B83B500E570DE /* MainViewController.swift */; };
+		DD40BEE22193ABF300E570DE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD40BEE12193ABF300E570DE /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		DD40BEDB218B765C00E570DE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DD40BEDD218B766A00E570DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD40BEDF218B83B500E570DE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DD40BEE12193ABF300E570DE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		B053B2052174ED2A00243D4C = {
 			isa = PBXGroup;
 			children = (
+				DD40BEE12193ABF300E570DE /* Settings.bundle */,
 				B053B2102174ED2A00243D4C /* librarycards */,
 				B053B2252174ED2C00243D4C /* librarycardsTests */,
 				B053B2302174ED2C00243D4C /* librarycardsUITests */,
@@ -180,17 +183,17 @@
 		DD40BEB62182669400E570DE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD40BEB72182670600E570DE /* selectRegistrantVC.swift */,
 				DD40BEB92182680800E570DE /* selectMainVC.swift */,
-				DD40BEBB2182684C00E570DE /* parentLogInVC.swift */,
-				DD40BEBD2182689200E570DE /* addKidsVC.swift */,
+				DD40BEB72182670600E570DE /* selectRegistrantVC.swift */,
+				DD40BEC7218269A800E570DE /* manualEntryVC.swift */,
+				DD40BEC52182698A00E570DE /* swipeVC.swift */,
 				DD40BEBF218268C700E570DE /* contactVC.swift */,
 				DD40BEC1218268DB00E570DE /* securityVC.swift */,
-				DD40BEC3218268ED00E570DE /* responseVC.swift */,
-				DD40BEC52182698A00E570DE /* swipeVC.swift */,
-				DD40BEC7218269A800E570DE /* manualEntryVC.swift */,
+				DD40BEBB2182684C00E570DE /* parentLogInVC.swift */,
+				DD40BEBD2182689200E570DE /* addKidsVC.swift */,
 				DD40BEC921826A5300E570DE /* myAccountLogInVC.swift */,
 				DD40BECB21826A6900E570DE /* myAccountVC.swift */,
+				DD40BEC3218268ED00E570DE /* responseVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				DD40BED7218787C600E570DE /* RobotoSlab-Light.ttf in Resources */,
 				B053B21C2174ED2B00243D4C /* LaunchScreen.storyboard in Resources */,
 				B053B2192174ED2B00243D4C /* Assets.xcassets in Resources */,
+				DD40BEE22193ABF300E570DE /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +549,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hcpl.librarycards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -564,7 +568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hcpl.librarycards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

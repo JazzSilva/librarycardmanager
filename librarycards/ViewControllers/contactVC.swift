@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class contactVC: UIViewController, buttonDelegate, formUpdateDelegate {
+class contactVC: UIViewController, buttonDelegate {
     
-    weak var patron: Patron?
+    var manager: libraryCardManager?
     let phoneTextField = formTextField()
     let emailTextField = formTextField()
     let doneButton = nextButton()
@@ -23,6 +23,8 @@ class contactVC: UIViewController, buttonDelegate, formUpdateDelegate {
         view.addSubview(doneButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,15 +35,23 @@ class contactVC: UIViewController, buttonDelegate, formUpdateDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
-        phoneTextField.formDelegate = self
-        phoneTextField.accessibilityLabel = "phoneNumber"
-        phoneTextField.placeholder = "Phone Number"
+        phoneTextField.formDelegate = self.manager
+        if (self.manager?.activePatron?.phone != nil && self.manager?.activePatron?.phone != "") {
+            phoneTextField.text = self.manager?.activePatron?.phone
+        }
+        else {
+            phoneTextField.placeholder = "Phone"
+        }
         phoneTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         phoneTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
         
-        emailTextField.formDelegate = self
-        emailTextField.accessibilityLabel = "email"
-        emailTextField.placeholder = "Email Address"
+        emailTextField.formDelegate = self.manager
+        if (self.manager?.activePatron?.email != nil && self.manager?.activePatron?.email != "") {
+            emailTextField.text = self.manager?.activePatron?.email
+        }
+        else {
+            emailTextField.placeholder = "Email"
+        }
         emailTextField.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 100).isActive = true
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
@@ -52,7 +62,9 @@ class contactVC: UIViewController, buttonDelegate, formUpdateDelegate {
     
     func onButtonTapped() {
         let nextViewController = securityVC()
-        nextViewController.patron = self.patron
+        manager?.activePatron?.phone = phoneTextField.text
+        manager?.activePatron?.email = emailTextField.text
+        nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     

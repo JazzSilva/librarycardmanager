@@ -11,7 +11,7 @@ import UIKit
 
 class responseVC: UIViewController, buttonDelegate {
     
-    weak var patron: Patron?
+    var manager: libraryCardManager?
     
     let doneButton = nextButton()
     
@@ -20,6 +20,7 @@ class responseVC: UIViewController, buttonDelegate {
         view.addSubview(doneButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
+        manager?.printPatron()
     }
     
     override func didReceiveMemoryWarning() {
