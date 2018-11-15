@@ -40,7 +40,7 @@ class selectMainVC: UIViewController {
         
         //Pull the branch name from user settings to display
         let userDefaults = UserDefaults.standard
-        let branchName = userDefaults.string(forKey: "branch_name")!
+        let branchName = userDefaults.string(forKey: "branch_name") ?? "HCPL"
         title = "Welcome to \(branchName)!"
         
         let logoutButton = UIBarButtonItem(title: "Staff", style: .plain, target: self, action: #selector(logout))

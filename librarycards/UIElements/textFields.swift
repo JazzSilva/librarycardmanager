@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol formUpdateDelegate: class {
-    func didUpdateData()
+    func fieldDidBecomeActive()
 }
 
 // This is a custom class of UITextField that is used on all patron registration views
@@ -22,7 +22,7 @@ class formTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         formatTextField()
-        self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        self.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,14 +39,15 @@ class formTextField: UITextField {
         self.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        self.formDelegate?.didUpdateData()
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.formDelegate?.fieldDidBecomeActive()
     }
     
 }
 
 extension libraryCardManager {
-    func didUpdateData() {
-        print("patron information updated")
+    
+    func fieldDidBecomeActive() {
+        print("nothing happens here")
     }
 }

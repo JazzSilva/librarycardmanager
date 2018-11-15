@@ -15,41 +15,41 @@
 			<string>branch_name</string>
 			<key>DefaultValue</key>
 			<string>HCPL</string>
-			<key>Values</key>
-			<array>
-				<string>ALD</string>
-				<string>ATA</string>
-				<string>BB</string>
-				<string>CC</string>
-				<string>FM</string>
-				<string>CY</string>
-				<string>EV</string>
-				<string>FB</string>
-				<string>GP</string>
-				<string>HM</string>
-				<string>JC</string>
-				<string>BC</string>
-				<string>KT</string>
-				<string>KW</string>
-				<string>LP</string>
-				<string>LAW</string>
-				<string>TB</string>
-				<string>MM</string>
-				<string>NC</string>
-				<string>NW</string>
-				<string>OF</string>
-				<string>PW</string>
-				<string>SH</string>
-				<string>SB</string>
-				<string>STR</string>
-				<string>TMC</string>
-				<string>WU</string>
-				<string>BP</string>
-				<string>HCPL</string>
-				<string>HCPL</string>
-				<string>HCPL</string>
-			</array>
 			<key>Titles</key>
+			<array>
+				<string>Aldine Branch Library</string>
+				<string>Atascocita Branch Library</string>
+				<string>Baldwin Boettcher Branch Library</string>
+				<string>Barbara Bush Branch Library</string>
+				<string>Clear Lake City-County Freeman Branch Library</string>
+				<string>Crosby- Edith Fae Cook Cole Branch Library</string>
+				<string>Evelyn Meador Branch Library</string>
+				<string>Fairbanks Branch Library</string>
+				<string>Galena Park Branch Library</string>
+				<string>High Meadows Branch Library</string>
+				<string>Jacinto City Branch Library</string>
+				<string>Katherine Tyra Branch Library</string>
+				<string>Katy Branch Library</string>
+				<string>Kingwood Branch Library</string>
+				<string>La Porte Branch Library</string>
+				<string>Law Library</string>
+				<string>Lone Star College - Tomball Community Library</string>
+				<string>Maud Smith Marks Branch Library</string>
+				<string>North Channel Branch Library</string>
+				<string>Northwest Branch Library</string>
+				<string>Octavia Fields Branch Library</string>
+				<string>Parker Williams Branch Library</string>
+				<string>South Houston Branch Library</string>
+				<string>Spring Branch Memorial Branch Library</string>
+				<string>Stratford Branch Library</string>
+				<string>TMC Library</string>
+				<string>West University Branch Library</string>
+				<string>Bellaire Public Library</string>
+				<string>HCPL Technology Lab @ Lincoln Park</string>
+				<string>Library Administration</string>
+				<string>Outreach</string>
+			</array>
+			<key>Values</key>
 			<array>
 				<string>Aldine Branch Library</string>
 				<string>Atascocita Branch Library</string>

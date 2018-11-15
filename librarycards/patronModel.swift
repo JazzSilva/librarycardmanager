@@ -9,11 +9,7 @@
 import Foundation
 
 class Patron {
-    
-    func printPatron() {
-        print(self.firstName ?? "no first", self.middleName ?? "no middle", self.lastName ?? "no last", self.birthday ?? "no birthday", self.phone ?? "no phone", self.email ?? "no email", self.address ?? "no address", self.city ?? "no city", self.state ?? "no state", self.zip ?? "no zip")
-    }
-    
+
     func submitData() {
         print("submitted data to this address")
     }
@@ -36,10 +32,14 @@ class Patron {
     var codeWord: String?
     
     var address: String?
-    var city: String?
-    var state: String?
+    var address1: String?
     var zip: String?
+    var state: String?
+    var neighborhood: String?
+    var locality: String?
+    var county: String?
     
+    var contactPreference: String?
     var license: String?
     var signature: Bool?
     

@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import GooglePlaces
 
-class manualEntryVC: UIViewController, buttonDelegate {
+class manualEntryVC: UIViewController, buttonDelegate, formUpdateDelegate {
     
     func didUpdateData(data: String) {
         print("data is", data)
@@ -73,7 +74,7 @@ class manualEntryVC: UIViewController, buttonDelegate {
         lastNameTextField.topAnchor.constraint(equalTo: middleNameTextField.bottomAnchor, constant: 50).isActive = true
         lastNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        address1TextField.formDelegate = self.manager
+        address1TextField.formDelegate = self
         if (self.manager?.activePatron?.address != nil && self.manager?.activePatron?.address != "") {
             address1TextField.text = self.manager?.activePatron?.address
         }
