@@ -44,6 +44,9 @@ class manualEntryVC: UIViewController, buttonDelegate, formUpdateDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        navigationItem.setRightBarButton(cancelButton, animated: true)
+        
         firstNameTextField.formDelegate = self.manager
         if (self.manager?.activePatron?.firstName != nil && self.manager?.activePatron?.firstName != "") {
             firstNameTextField.text = self.manager?.activePatron?.firstName
@@ -79,7 +82,7 @@ class manualEntryVC: UIViewController, buttonDelegate, formUpdateDelegate {
             address1TextField.text = self.manager?.activePatron?.address
         }
         else {
-            address1TextField.placeholder = "Address"
+            address1TextField.placeholder = "Mailing Address"
         }
         address1TextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 50).isActive = true
         address1TextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -97,6 +100,10 @@ class manualEntryVC: UIViewController, buttonDelegate, formUpdateDelegate {
         manager?.activePatron?.address = address1TextField.text
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func cancel() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

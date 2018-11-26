@@ -88,8 +88,10 @@ class SSRadioButton: UIButton {
     
     func formatButton(title: String) {
         self.backgroundColor = .white
-        self.setTitleColor(.black, for: .normal)
+        self.setTitleColor(styleGuide.colors.grayPrimary, for: .normal)
         self.setTitle(title, for: .normal)
+        self.circleColor = styleGuide.colors.greenAccent!
+        self.circleRadius = 15
         self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 18.0)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: 200).isActive = true

@@ -31,8 +31,8 @@ class formTextField: UITextField {
     
     func formatTextField() {
         self.borderStyle = .roundedRect
-        self.backgroundColor = .white
-        self.textColor = .black
+        self.backgroundColor = styleGuide.colors.whitePrimary
+        self.textColor = styleGuide.colors.grayPrimary
         self.font = UIFont(name: "RobotoSlab-Regular", size: 18.0)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: 500).isActive = true

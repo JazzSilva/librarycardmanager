@@ -30,6 +30,9 @@ class myAccountVC: UIViewController, buttonDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        navigationItem.setRightBarButton(cancelButton, animated: true)
+        
         doneButton.setTitle("Sign Out", for: .normal)
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
@@ -41,6 +44,10 @@ class myAccountVC: UIViewController, buttonDelegate {
         let nextViewController = selectMainVC()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func cancel() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

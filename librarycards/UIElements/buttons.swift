@@ -30,13 +30,13 @@ class nextButton: UIButton {
     }
     
     func formatButton() {
-        self.backgroundColor = .black
-        self.setTitleColor(.white, for: .normal)
+        self.backgroundColor = styleGuide.colors.greenAccent
+        self.setTitleColor(styleGuide.colors.whitePrimary, for: .normal)
         self.setTitle("Next", for: .normal)
-        self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 20.0)
+        self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 22.0)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 70).isActive = true
     }
     
     @objc func buttonTapped() {
@@ -56,8 +56,8 @@ class selectionButton: UIButton {
     }
     
     func formatButton() {
-        self.backgroundColor = .blue
-        self.setTitleColor(.white, for: .normal)
+        self.backgroundColor = styleGuide.colors.navyPrimary
+        self.setTitleColor(styleGuide.colors.whitePrimary, for: .normal)
         self.setTitle("Default", for: .normal)
         self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 25.0)
         self.translatesAutoresizingMaskIntoConstraints = false

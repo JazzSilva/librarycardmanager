@@ -40,12 +40,11 @@ class libraryCardManager: formUpdateDelegate {
     
     func getPatronData() {
         //Lookup a patron and assign them to our class
-
     }
     
     func printPatron() {
         for patron in patronQueue {
-            print("First Name: \(patron.firstName ?? "")", "Middle Name: \(patron.middleName ?? "")", "Last Name: \(patron.lastName ?? "")", "Birthday: \(patron.birthday ?? NSDate())", "Phone: \(patron.phone ?? "")", "Email: \(patron.email ?? "")", "Address: \(patron.address ?? "")","Address1: \(patron.address1 ?? "")","Locality: \(patron.locality ?? "")","State: \(patron.state ?? "")","Neighborhood: \(patron.neighborhood ?? "")","County: \(patron.county ?? "")", "Zip: \(patron.zip ?? "")","Contact Preference: \(patron.contactPreference ?? "")","Pin: \(patron.pin ?? "")", "Code: \(patron.codeWord ?? "")")
+            print("First Name: \(patron.firstName ?? "")", "Middle Name: \(patron.middleName ?? "")", "Last Name: \(patron.lastName ?? "")", "Birthday: \(patron.birthday ?? NSDate())", "Phone: \(patron.phone ?? "")", "Email: \(patron.email ?? "")", "Address: \(patron.address ?? "")","Address1: \(patron.address1 ?? "")","Locality: \(patron.locality ?? "")","State: \(patron.state ?? "")","Neighborhood: \(patron.neighborhood ?? "")","County: \(patron.county ?? "")", "Zip: \(patron.zip ?? "")","Contact Preference: \(patron.contactPreference ?? "")","Pin: \(patron.pin ?? "")", "Code: \(patron.codeWord ?? "")", "Signature: \(patron.signature ?? false)")
         }
     }
     

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class SplashViewController: UIViewController {
     private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
@@ -21,9 +22,9 @@ class SplashViewController: UIViewController {
     
     private func makeServiceCall() {
         activityIndicator.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
             self.activityIndicator.stopAnimating()
-            if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
+            if Auth.auth().currentUser != nil {
                 AppDelegate.shared.rootViewController.switchToMainScreen()
                 // navigate to protected page
             } else {
@@ -35,7 +36,6 @@ class SplashViewController: UIViewController {
     
     private func setupLayout() {
         view.backgroundColor = UIColor.white
-        
         activityIndicator.frame = view.bounds
         activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
     }

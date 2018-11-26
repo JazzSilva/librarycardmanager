@@ -32,6 +32,9 @@ class selectRegistrantVC: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        navigationItem.setRightBarButton(cancelButton, animated: true)
+        
         registeringMyselfButton.setTitle("Registering for Myself", for: .normal)
         registeringMyselfButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         registeringMyselfButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
@@ -54,6 +57,10 @@ class selectRegistrantVC: UIViewController {
         let nextViewController = parentLogInVC()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func cancel() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

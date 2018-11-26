@@ -35,6 +35,9 @@ class securityVC: UIViewController, buttonDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        navigationItem.setRightBarButton(cancelButton, animated: true)
+        
         pinTextField.formDelegate = self.manager
         pinTextField.isSecureTextEntry = true
         if (self.manager?.activePatron?.pin != nil && self.manager?.activePatron?.pin != "") {
@@ -56,7 +59,6 @@ class securityVC: UIViewController, buttonDelegate {
         codeWordTextField.topAnchor.constraint(equalTo: pinTextField.bottomAnchor, constant: 100).isActive = true
         codeWordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        doneButton.setTitle("Submit", for: .normal)
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         doneButton.delegate = self
@@ -68,6 +70,10 @@ class securityVC: UIViewController, buttonDelegate {
         manager?.activePatron?.pin = pinTextField.text
         manager?.activePatron?.codeWord = codeWordTextField.text
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func cancel() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

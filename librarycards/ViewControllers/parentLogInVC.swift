@@ -32,6 +32,9 @@ class parentLogInVC: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        navigationItem.setRightBarButton(cancelButton, animated: true)
+        
         signInParentButton.setTitle("Sign in as Parent", for: .normal)
         signInParentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         signInParentButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
@@ -54,6 +57,10 @@ class parentLogInVC: UIViewController {
         let nextViewController = swipeVC()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func cancel() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

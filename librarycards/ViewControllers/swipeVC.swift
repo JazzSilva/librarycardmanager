@@ -33,7 +33,10 @@ class swipeVC: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
-        swipeCardButton.setTitle("Swipe Card", for: .normal)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        navigationItem.setRightBarButton(cancelButton, animated: true)
+        
+        swipeCardButton.setTitle("Swipe my ID/License", for: .normal)
         swipeCardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         swipeCardButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
         swipeCardButton.addTarget(self, action: #selector(swipeTapped), for: .touchUpInside)
@@ -55,6 +58,10 @@ class swipeVC: UIViewController {
         let nextViewController = manualEntryVC()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func cancel() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

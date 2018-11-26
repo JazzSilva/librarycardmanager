@@ -40,6 +40,9 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
     private func setupLayout() {
         view.backgroundColor = .white
         
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        navigationItem.setRightBarButton(cancelButton, animated: true)
+        
         phoneTextField.formDelegate = self.manager
         if (self.manager?.activePatron?.phone != nil && self.manager?.activePatron?.phone != "") {
             phoneTextField.text = self.manager?.activePatron?.phone
@@ -61,13 +64,10 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         phoneButton.formatButton(title: "Phone")
-        phoneButton.circleColor = .green
-        phoneButton.circleRadius = 15
         phoneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         phoneButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 100).isActive = true
+        
         emailButton.formatButton(title: "Email")
-        emailButton.circleColor = .green
-        emailButton.circleRadius = 15
         emailButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         emailButton.topAnchor.constraint(equalTo: phoneButton.bottomAnchor, constant: 50).isActive = true
         
@@ -77,7 +77,6 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
         else {
             phoneButton.isSelected = .init(true)
         }
-        
         
         radioButtonController = SSRadioButtonsController(buttons: phoneButton, emailButton)
         radioButtonController?.delegate = self
@@ -108,6 +107,10 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
     func didSelectButton(selectedButton: UIButton?)
     {
         print(" \(selectedButton)" )
+    }
+    
+    @objc func cancel() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

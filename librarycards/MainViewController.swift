@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class MainViewController: UINavigationController {
     
@@ -25,8 +26,13 @@ class MainViewController: UINavigationController {
     @objc
     private func logout() {
         // clear the user session (example only, not for the production)
-        UserDefaults.standard.set(false, forKey: "LOGGED_IN")
-        AppDelegate.shared.rootViewController.switchToLogout()
         // navigate to the Main Screen
+        do {
+            try Auth.auth().signOut()
+        }
+        catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        AppDelegate.shared.rootViewController.switchToLogout()
     }
 }
