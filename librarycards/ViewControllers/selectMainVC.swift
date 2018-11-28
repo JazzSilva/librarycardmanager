@@ -12,13 +12,13 @@ import UIKit
 class selectMainVC: UIViewController {
     
     var manager: libraryCardManager?
-    let signUpButton = selectionButton()
-    let myAccountButton = selectionButton()
+    let registeringMyselfButton = selectionButton()
+    let registeringChildButton = selectionButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(signUpButton)
-        view.addSubview(myAccountButton)
+        view.addSubview(registeringMyselfButton)
+        view.addSubview(registeringChildButton)
         UserDefaults.standard.register(defaults: [String : Any]())
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,39 +38,47 @@ class selectMainVC: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
-        //Pull the branch name from user settings to display
         let userDefaults = UserDefaults.standard
-        let branchName = userDefaults.string(forKey: "branch_name") ?? "HCPL"
-        title = "Welcome to \(branchName)!"
+        let branchName = userDefaults.string(forKey: "branch_name") ?? "Harris County Public Library"
         
-        let logoutButton = UIBarButtonItem(title: "Staff", style: .plain, target: self, action: #selector(logout))
-        navigationItem.setLeftBarButton(logoutButton, animated: true)
+        let logoutButton = UIBarButtonItem(title: "Log-Out", style: .plain, target: self, action: #selector(logout))
+        logoutButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
+        navigationItem.setRightBarButton(logoutButton, animated: true)
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: styleGuide.colors.grayPrimary,
+             NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Bold", size: 36)!]
         
-        signUpButton.setTitle("Sign-Up", for: .normal)
-        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        signUpButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
-        signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
+        self.title = branchName
         
-        myAccountButton.setTitle("My Account", for: .normal)
-        myAccountButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 100).isActive = true
-        myAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        myAccountButton.addTarget(self, action: #selector(myAccountTapped), for: .touchUpInside)
+        registeringMyselfButton.setTitle("Registering for Myself", for: .normal)
+        registeringMyselfButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        registeringMyselfButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
+        registeringMyselfButton.addTarget(self, action: #selector(registeringMyselfTapped), for: .touchUpInside)
+        
+        registeringChildButton.setTitle("Registering for My Child", for: .normal)
+        registeringChildButton.topAnchor.constraint(equalTo: registeringMyselfButton.bottomAnchor, constant: 100).isActive = true
+        registeringChildButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        registeringChildButton.addTarget(self, action: #selector(registeringChildTapped), for: .touchUpInside)
     }
     
-    @objc func signUpTapped() {
-        let nextViewController = selectRegistrantVC()
+    @objc func registeringMyselfTapped() {
+        let nextViewController = swipeVC()
+        manager?.beginApplication()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
-    @objc func myAccountTapped() {
-        let nextViewController = myAccountLoginVC()
+    @objc func registeringChildTapped() {
+        let nextViewController = parentLogInVC()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
-    @objc
-    private func logout() {
+    @objc private func logout() {
         // clear the user session (example only, not for the production)
         UserDefaults.standard.set(false, forKey: "LOGGED_IN")
         AppDelegate.shared.rootViewController.switchToLogout()

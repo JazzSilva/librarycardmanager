@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol formUpdateDelegate: class {
-    func fieldDidBecomeActive()
+    func fieldDidBecomeActive(_ textField: UITextField)
 }
 
 // This is a custom class of UITextField that is used on all patron registration views
@@ -22,7 +22,7 @@ class formTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         formatTextField()
-        self.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
+        self.addTarget(self, action: #selector(shouldReturn(_:)), for: .editingDidEndOnExit)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,17 +37,34 @@ class formTextField: UITextField {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: 500).isActive = true
         self.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        self.autocapitalizationType = .sentences
+        self.autocorrectionType = .no
+        self.returnKeyType = .next
+        self.clearButtonMode = .unlessEditing
+        self.keyboardType = .default
+        self.enablesReturnKeyAutomatically = true
     }
     
-    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.formDelegate?.fieldDidBecomeActive()
+    @objc func shouldReturn(_ textField: UITextField) {
+        self.formDelegate?.fieldDidBecomeActive(textField)
     }
     
 }
 
 extension libraryCardManager {
     
-    func fieldDidBecomeActive() {
-        print("nothing happens here")
+    func fieldDidBecomeActive(_ textField: UITextField) {
+        let nextTag = textField.tag + 1
+        // Try to find next responder
+        let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder?
+        
+        if nextResponder != nil {
+            // Found next responder, so set it
+            nextResponder?.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard
+            textField.resignFirstResponder()
+        }
     }
 }

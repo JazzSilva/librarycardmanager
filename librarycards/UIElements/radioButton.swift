@@ -92,7 +92,7 @@ class SSRadioButton: UIButton {
         self.setTitle(title, for: .normal)
         self.circleColor = styleGuide.colors.greenAccent!
         self.circleRadius = 15
-        self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 18.0)
+        self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 22.0)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: 200).isActive = true
         self.heightAnchor.constraint(equalToConstant: 30).isActive = true

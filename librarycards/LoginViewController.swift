@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
         view.addSubview(usernameTextField)
         view.addSubview(passwordTextField)
         view.addSubview(submitButton)
-        title = "Library Card Manager"
         setupLayout()
     }
     
@@ -30,23 +29,54 @@ class LoginViewController: UIViewController {
         formatTextField(field: passwordTextField)
         formatTextField(field: usernameTextField)
         
-        usernameTextField.placeholder = "Username"
+        title = "Library Card Services"
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: styleGuide.colors.grayPrimary,
+             NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Bold", size: 36)!]
+        
+        usernameTextField.placeholder = "Email"
+        usernameTextField.delegate = self
+        usernameTextField.autocapitalizationType = .none
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.returnKeyType = .next
+        usernameTextField.clearButtonMode = .unlessEditing
+        usernameTextField.keyboardType = .emailAddress
+        usernameTextField.enablesReturnKeyAutomatically = true
+        usernameTextField.tag = 1
         usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        usernameTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -150).isActive = true
+        
         passwordTextField.placeholder = "Password"
+        passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.autocapitalizationType = .none
+        passwordTextField.autocorrectionType = .no
+        passwordTextField.returnKeyType = .next
+        passwordTextField.clearButtonMode = .unlessEditing
+        passwordTextField.keyboardType = .namePhonePad
+        passwordTextField.enablesReturnKeyAutomatically = true
+        passwordTextField.tag = 2
         passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 100).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 50).isActive = true
         
         submitButton.backgroundColor = styleGuide.colors.grayPrimary
         submitButton.setTitleColor(styleGuide.colors.whitePrimary, for: .normal)
         submitButton.setTitle("Sign In", for: .normal)
-        submitButton.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 20.0)
+        submitButton.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 22.0)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
-        submitButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        submitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        submitButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         submitButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 150).isActive = true
         submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    
+        submitButton.layer.shadowColor = styleGuide.colors.grayPrimary?.cgColor
+        submitButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        submitButton.layer.shadowOpacity = 1.0
+        submitButton.layer.shadowRadius = 2.6
+        submitButton.layer.masksToBounds = false
+        submitButton.layer.cornerRadius = 4.0
         
         submitButton.addTarget(self, action: #selector(login), for: .touchUpInside)
     }
@@ -59,6 +89,21 @@ class LoginViewController: UIViewController {
         field.translatesAutoresizingMaskIntoConstraints = false
         field.widthAnchor.constraint(equalToConstant: 500).isActive = true
         field.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        // Try to find next responder
+        let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder?
+        
+        if nextResponder != nil {
+            // Found next responder, so set it
+            nextResponder?.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard
+            textField.resignFirstResponder()
+        }
+        return false
     }
     
     @objc private func login() {

@@ -35,28 +35,35 @@ class securityVC: UIViewController, buttonDelegate {
     private func setupLayout() {
         view.backgroundColor = .white
         
+        self.title = "Security"
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
         
         pinTextField.formDelegate = self.manager
         pinTextField.isSecureTextEntry = true
+        pinTextField.tag = 9
+        pinTextField.keyboardType = .numberPad
         if (self.manager?.activePatron?.pin != nil && self.manager?.activePatron?.pin != "") {
             pinTextField.text = self.manager?.activePatron?.pin
         }
         else {
-            pinTextField.placeholder = "Pin"
+            pinTextField.placeholder = "4 Digit Pin"
         }
         pinTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        pinTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        pinTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
         
         codeWordTextField.formDelegate = self.manager
+        codeWordTextField.tag = 10
         if (self.manager?.activePatron?.codeWord != nil && self.manager?.activePatron?.codeWord != "") {
             codeWordTextField.text = self.manager?.activePatron?.codeWord
         }
         else {
             codeWordTextField.placeholder = "Mother's Maiden Name"
         }
-        codeWordTextField.topAnchor.constraint(equalTo: pinTextField.bottomAnchor, constant: 100).isActive = true
+        codeWordTextField.topAnchor.constraint(equalTo: pinTextField.bottomAnchor, constant: 50).isActive = true
         codeWordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

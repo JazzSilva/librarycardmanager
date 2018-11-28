@@ -19,7 +19,6 @@
 		DD40BEB1217E296F00E570DE /* libraryCardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB0217E296F00E570DE /* libraryCardManager.swift */; };
 		DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB2217E2B2F00E570DE /* patronModel.swift */; };
 		DD40BEB5217F767600E570DE /* organizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB4217F767600E570DE /* organizationModel.swift */; };
-		DD40BEB82182670600E570DE /* selectRegistrantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB72182670600E570DE /* selectRegistrantVC.swift */; };
 		DD40BEBA2182680800E570DE /* selectMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEB92182680800E570DE /* selectMainVC.swift */; };
 		DD40BEBC2182684C00E570DE /* parentLogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEBB2182684C00E570DE /* parentLogInVC.swift */; };
 		DD40BEBE2182689200E570DE /* addKidsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEBD2182689200E570DE /* addKidsVC.swift */; };
@@ -38,7 +37,6 @@
 		DD40BEDA21878FF900E570DE /* buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BED921878FF900E570DE /* buttons.swift */; };
 		DD40BEDC218B765C00E570DE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDB218B765C00E570DE /* SplashViewController.swift */; };
 		DD40BEDE218B766A00E570DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDD218B766A00E570DE /* LoginViewController.swift */; };
-		DD40BEE0218B83B500E570DE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEDF218B83B500E570DE /* MainViewController.swift */; };
 		DD40BEE22193ABF300E570DE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD40BEE12193ABF300E570DE /* Settings.bundle */; };
 		DD40BEE4219DEC7A00E570DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD40BEE3219DEC7A00E570DE /* GoogleService-Info.plist */; };
 		DD40BEE5219DEC7A00E570DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD40BEE3219DEC7A00E570DE /* GoogleService-Info.plist */; };
@@ -48,6 +46,8 @@
 		DD40BEED219E10DC00E570DE /* radioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEEC219E10DC00E570DE /* radioButton.swift */; };
 		DD40BEEF21AB731500E570DE /* hexToUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEEE21AB731500E570DE /* hexToUIColor.swift */; };
 		DD40BEF121AB734600E570DE /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEF021AB734600E570DE /* colors.swift */; };
+		DD8ADB1021AC10CC0025744D /* UIfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB0F21AC10CC0025744D /* UIfont.swift */; };
+		DD8ADB1221AC10F20025744D /* UIlabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB1121AC10F20025744D /* UIlabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +91,6 @@
 		DD40BEB0217E296F00E570DE /* libraryCardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libraryCardManager.swift; sourceTree = "<group>"; };
 		DD40BEB2217E2B2F00E570DE /* patronModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patronModel.swift; sourceTree = "<group>"; };
 		DD40BEB4217F767600E570DE /* organizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = organizationModel.swift; sourceTree = "<group>"; };
-		DD40BEB72182670600E570DE /* selectRegistrantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectRegistrantVC.swift; sourceTree = "<group>"; };
 		DD40BEB92182680800E570DE /* selectMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectMainVC.swift; sourceTree = "<group>"; };
 		DD40BEBB2182684C00E570DE /* parentLogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentLogInVC.swift; sourceTree = "<group>"; };
 		DD40BEBD2182689200E570DE /* addKidsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addKidsVC.swift; sourceTree = "<group>"; };
@@ -110,7 +109,6 @@
 		DD40BED921878FF900E570DE /* buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttons.swift; sourceTree = "<group>"; };
 		DD40BEDB218B765C00E570DE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DD40BEDD218B766A00E570DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DD40BEDF218B83B500E570DE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD40BEE12193ABF300E570DE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD40BEE3219DEC7A00E570DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD40BEE8219DF70D00E570DE /* googlePlacesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googlePlacesExtension.swift; sourceTree = "<group>"; };
@@ -118,6 +116,8 @@
 		DD40BEEC219E10DC00E570DE /* radioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radioButton.swift; sourceTree = "<group>"; };
 		DD40BEEE21AB731500E570DE /* hexToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexToUIColor.swift; sourceTree = "<group>"; };
 		DD40BEF021AB734600E570DE /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		DD8ADB0F21AC10CC0025744D /* UIfont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIfont.swift; sourceTree = "<group>"; };
+		DD8ADB1121AC10F20025744D /* UIlabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIlabel.swift; sourceTree = "<group>"; };
 		DFC3F393E9ACF97DC4E9AC41 /* Pods-librarycardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-librarycardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-librarycardsTests/Pods-librarycardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,7 +213,6 @@
 				B053B2132174ED2A00243D4C /* RootViewController.swift */,
 				DD40BEDB218B765C00E570DE /* SplashViewController.swift */,
 				DD40BEDD218B766A00E570DE /* LoginViewController.swift */,
-				DD40BEDF218B83B500E570DE /* MainViewController.swift */,
 			);
 			path = librarycards;
 			sourceTree = "<group>";
@@ -240,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				DD40BEB92182680800E570DE /* selectMainVC.swift */,
-				DD40BEB72182670600E570DE /* selectRegistrantVC.swift */,
 				DD40BEC7218269A800E570DE /* manualEntryVC.swift */,
 				DD40BEC52182698A00E570DE /* swipeVC.swift */,
 				DD40BEBF218268C700E570DE /* contactVC.swift */,
@@ -282,6 +280,8 @@
 			children = (
 				DD40BEE8219DF70D00E570DE /* googlePlacesExtension.swift */,
 				DD40BEEE21AB731500E570DE /* hexToUIColor.swift */,
+				DD8ADB0F21AC10CC0025744D /* UIfont.swift */,
+				DD8ADB1121AC10F20025744D /* UIlabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -488,14 +488,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-librarycards/Pods-librarycards-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,11 +542,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD40BEE0218B83B500E570DE /* MainViewController.swift in Sources */,
 				DD40BEEB219E108300E570DE /* radioButtonController.swift in Sources */,
 				DD40BECA21826A5300E570DE /* myAccountLogInVC.swift in Sources */,
 				B053B2142174ED2A00243D4C /* RootViewController.swift in Sources */,
 				DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */,
+				DD8ADB1021AC10CC0025744D /* UIfont.swift in Sources */,
 				DD40BEF121AB734600E570DE /* colors.swift in Sources */,
 				DD40BEBC2182684C00E570DE /* parentLogInVC.swift in Sources */,
 				DD40BEC4218268ED00E570DE /* responseVC.swift in Sources */,
@@ -549,8 +563,8 @@
 				DD40BEB5217F767600E570DE /* organizationModel.swift in Sources */,
 				DD40BEDC218B765C00E570DE /* SplashViewController.swift in Sources */,
 				DD40BEEF21AB731500E570DE /* hexToUIColor.swift in Sources */,
+				DD8ADB1221AC10F20025744D /* UIlabel.swift in Sources */,
 				DD40BEC2218268DB00E570DE /* securityVC.swift in Sources */,
-				DD40BEB82182670600E570DE /* selectRegistrantVC.swift in Sources */,
 				DD40BEDA21878FF900E570DE /* buttons.swift in Sources */,
 				DD40BEE9219DF70D00E570DE /* googlePlacesExtension.swift in Sources */,
 				DD40BECF2187821700E570DE /* textFields.swift in Sources */,
@@ -722,7 +736,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7H6M6RY2G;
 				INFOPLIST_FILE = librarycards/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,7 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7H6M6RY2G;
 				INFOPLIST_FILE = librarycards/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

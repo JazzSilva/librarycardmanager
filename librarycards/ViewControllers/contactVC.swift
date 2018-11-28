@@ -15,6 +15,7 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
     var radioButtonController: SSRadioButtonsController?
     let phoneTextField = formTextField()
     let emailTextField = formTextField()
+    let preferenceLabel = UILabel()
     let phoneButton = SSRadioButton()
     let emailButton = SSRadioButton()
     let doneButton = nextButton()
@@ -26,6 +27,7 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
         view.addSubview(phoneButton)
         view.addSubview(emailButton)
         view.addSubview(doneButton)
+        view.addSubview(preferenceLabel)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
         radioButtonController = SSRadioButtonsController(buttons: phoneButton, emailButton)
@@ -40,10 +42,16 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
     private func setupLayout() {
         view.backgroundColor = .white
         
+        self.title = "Contact Information"
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
         
         phoneTextField.formDelegate = self.manager
+        phoneTextField.tag = 7
+        phoneTextField.keyboardType = .phonePad
         if (self.manager?.activePatron?.phone != nil && self.manager?.activePatron?.phone != "") {
             phoneTextField.text = self.manager?.activePatron?.phone
         }
@@ -51,21 +59,34 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
             phoneTextField.placeholder = "Phone"
         }
         phoneTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        phoneTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        phoneTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
         
         emailTextField.formDelegate = self.manager
+        emailTextField.tag  = 8
+        emailTextField.keyboardType = .emailAddress
         if (self.manager?.activePatron?.email != nil && self.manager?.activePatron?.email != "") {
             emailTextField.text = self.manager?.activePatron?.email
         }
         else {
             emailTextField.placeholder = "Email"
         }
-        emailTextField.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 100).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 50).isActive = true
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        preferenceLabel.translatesAutoresizingMaskIntoConstraints = false
+        preferenceLabel.text = "Contact Preference"
+        preferenceLabel.font = UIFont(name: "RobotoSlab-Regular", size: 18)
+        preferenceLabel.isUserInteractionEnabled = false
+        preferenceLabel.adjustsFontSizeToFitWidth = true
+        preferenceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        preferenceLabel.bottomAnchor.constraint(equalTo: phoneButton.topAnchor, constant: -50).isActive = true
+        preferenceLabel.textColor = styleGuide.colors.grayPrimary
+        preferenceLabel.textAlignment = .right
         
         phoneButton.formatButton(title: "Phone")
         phoneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        phoneButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 100).isActive = true
+        phoneButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 150).isActive = true
         
         emailButton.formatButton(title: "Email")
         emailButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

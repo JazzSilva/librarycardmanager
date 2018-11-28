@@ -34,11 +34,15 @@ class swipeVC: UIViewController {
         view.backgroundColor = .white
         
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
         
+        self.title = "Sign-Up Method"
         swipeCardButton.setTitle("Swipe my ID/License", for: .normal)
         swipeCardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        swipeCardButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        swipeCardButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
         swipeCardButton.addTarget(self, action: #selector(swipeTapped), for: .touchUpInside)
         
         manuallyEnterButton.setTitle("Manually Enter my Information", for: .normal)

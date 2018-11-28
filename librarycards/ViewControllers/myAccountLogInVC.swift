@@ -31,7 +31,10 @@ class myAccountLoginVC: UIViewController {
         view.backgroundColor = .white
         
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
         
         loginButton.setTitle("Login to My Account", for: .normal)
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

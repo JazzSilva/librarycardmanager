@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelegate {
     
@@ -15,9 +16,8 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
     var radioButtonController: SSRadioButtonsController?
     let agreeButton = SSRadioButton()
     let disagreeButton = SSRadioButton()
-    let termsLabel = UILabel()
-    
     let doneButton = nextButton()
+    let termsLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +39,32 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
     private func setupLayout() {
         view.backgroundColor = .white
         
+        self.title = "Review and Submit"
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
         
         termsLabel.translatesAutoresizingMaskIntoConstraints = false
         termsLabel.text = "I agree to sign my library card and accept financial responsibility for all items checked out on my library card."
+        termsLabel.font = UIFont(name: "RobotoSlab-Regular", size: 22)
         termsLabel.isUserInteractionEnabled = false
-        termsLabel.textColor = .red
+        termsLabel.adjustsFontSizeToFitWidth = true
+        termsLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -100).isActive = true
         termsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        termsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
         termsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        termsLabel.textColor = styleGuide.colors.grayPrimary
+        termsLabel.textAlignment = .center
+        termsLabel.lineBreakMode = .byWordWrapping
+        termsLabel.numberOfLines = 2
+        termsLabel.minimumScaleFactor = 0.5
         
         agreeButton.isSelected = .init(false)
         agreeButton.formatButton(title: "I agree")
         agreeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        agreeButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 100).isActive = true
+        agreeButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 80).isActive = true
         agreeButton.addTarget(self, action: #selector(didSelect), for: .touchUpInside)
         
         disagreeButton.isSelected = .init(true)
@@ -75,8 +87,8 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
     
     func onButtonTapped() {
         ///TODO: Need to replace this with a proper unwind/log out segue
-        let nextViewController = selectMainVC()
-        navigationController?.pushViewController(nextViewController, animated: true)
+        manager?.submitApplication()
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func cancel() {

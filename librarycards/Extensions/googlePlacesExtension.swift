@@ -79,7 +79,7 @@ extension manualEntryVC: GMSAutocompleteViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
-    func fieldDidBecomeActive() {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         
@@ -91,5 +91,6 @@ extension manualEntryVC: GMSAutocompleteViewControllerDelegate {
         
         present(autocompleteController, animated: true, completion: nil)
     }
+    
     
 }

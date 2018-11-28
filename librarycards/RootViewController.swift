@@ -52,6 +52,7 @@ class RootViewController: UIViewController {
         //This is probably where I should add the selectMainVC
         let mainViewController = selectMainVC()
         let mainScreen = UINavigationController(rootViewController: mainViewController)
+        
         animateFadeTransition(to: mainScreen)
     }
     

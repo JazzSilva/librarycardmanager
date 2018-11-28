@@ -37,6 +37,13 @@ class nextButton: UIButton {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: 100).isActive = true
         self.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        self.layer.shadowColor = styleGuide.colors.grayPrimary?.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 2.6
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 4.0
     }
     
     @objc func buttonTapped() {
@@ -63,5 +70,12 @@ class selectionButton: UIButton {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: 450).isActive = true
         self.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        self.layer.shadowColor = styleGuide.colors.grayPrimary?.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 2.6
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 4.0
     }
 }
