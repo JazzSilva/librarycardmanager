@@ -35,28 +35,50 @@ class selectMainVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [styleGuide.colors.aquaPrimary?.cgColor, styleGuide.colors.navyPrimary?.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setGradient()
+    }
+    
     private func setupLayout() {
         view.backgroundColor = .white
         
         let userDefaults = UserDefaults.standard
         let branchName = userDefaults.string(forKey: "branch_name") ?? "Harris County Public Library"
         
-        let logoutButton = UIBarButtonItem(title: "Log-Out", style: .plain, target: self, action: #selector(logout))
-        logoutButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
+        let logoutButton = UIBarButtonItem(title: "Staff", style: .plain, target: self, action: #selector(logout))
+        logoutButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(logoutButton, animated: true)
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barTintColor = styleGuide.colors.navyPrimary
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationController?.navigationBar.layer.shadowColor = styleGuide.colors.grayPrimary?.cgColor
+        navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        navigationController?.navigationBar.layer.shadowRadius = 2.6
+        navigationController?.navigationBar.layer.shadowOpacity = 1.0
+        navigationController?.navigationBar.layer.masksToBounds = false
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         navigationController?.navigationBar.largeTitleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: styleGuide.colors.grayPrimary,
+            [NSAttributedStringKey.foregroundColor: styleGuide.colors.whitePrimary,
              NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Bold", size: 36)!]
         
         self.title = branchName
         
         registeringMyselfButton.setTitle("Registering for Myself", for: .normal)
         registeringMyselfButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        registeringMyselfButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
+        registeringMyselfButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
         registeringMyselfButton.addTarget(self, action: #selector(registeringMyselfTapped), for: .touchUpInside)
         
         registeringChildButton.setTitle("Registering for My Child", for: .normal)
@@ -74,6 +96,7 @@ class selectMainVC: UIViewController {
     
     @objc func registeringChildTapped() {
         let nextViewController = parentLogInVC()
+        manager?.beginApplication()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }
@@ -85,4 +108,8 @@ class selectMainVC: UIViewController {
         // navigate to the Main Screen
     }
 
+}
+
+extension UIViewController {
+   
 }

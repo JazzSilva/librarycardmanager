@@ -36,15 +36,28 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    func setGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [styleGuide.colors.aquaPrimary?.cgColor, styleGuide.colors.navyPrimary?.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setGradient()
+    }
+    
     private func setupLayout() {
         view.backgroundColor = .white
         
         self.title = "Review and Submit"
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
-        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         termsLabel.translatesAutoresizingMaskIntoConstraints = false
         termsLabel.text = "I agree to sign my library card and accept financial responsibility for all items checked out on my library card."
@@ -53,9 +66,8 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
         termsLabel.adjustsFontSizeToFitWidth = true
         termsLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -100).isActive = true
         termsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        termsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
         termsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
-        termsLabel.textColor = styleGuide.colors.grayPrimary
+        termsLabel.textColor = styleGuide.colors.whitePrimary
         termsLabel.textAlignment = .center
         termsLabel.lineBreakMode = .byWordWrapping
         termsLabel.numberOfLines = 2

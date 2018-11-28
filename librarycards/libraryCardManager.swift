@@ -39,7 +39,9 @@ class libraryCardManager: formUpdateDelegate {
             "contactPreference": activePatron?.contactPreference,
             "pin": activePatron?.pin,
             "code": activePatron?.codeWord,
-            "signature": activePatron?.signature
+            "signature": activePatron?.signature,
+            "guardian": activePatron?.isGuardian,
+            "children": activePatron?.children
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -59,9 +61,7 @@ class libraryCardManager: formUpdateDelegate {
     
     func addChild() {
         // TODO: Add a child to the patronQueue
-        let childPatron = Patron()
         childCounter += 1
-        patronQueue.append(childPatron)
     }
     
     func getPatronData() {
@@ -70,7 +70,7 @@ class libraryCardManager: formUpdateDelegate {
     
     func printPatron() {
         for patron in patronQueue {
-            print("First Name: \(patron.firstName ?? "")", "Middle Name: \(patron.middleName ?? "")", "Last Name: \(patron.lastName ?? "")", "Birthday: \(patron.birthday ?? NSDate())", "Phone: \(patron.phone ?? "")", "Email: \(patron.email ?? "")", "Address: \(patron.address ?? "")","Address1: \(patron.address1 ?? "")","Locality: \(patron.locality ?? "")","State: \(patron.state ?? "")","Neighborhood: \(patron.neighborhood ?? "")","County: \(patron.county ?? "")", "Zip: \(patron.zip ?? "")","Contact Preference: \(patron.contactPreference ?? "")","Pin: \(patron.pin ?? "")", "Code: \(patron.codeWord ?? "")", "Signature: \(patron.signature ?? false)")
+            print("First Name: \(patron.firstName ?? "")", "Middle Name: \(patron.middleName ?? "")", "Last Name: \(patron.lastName ?? "")", "Birthday: \(patron.birthday ?? NSDate())", "Phone: \(patron.phone ?? "")", "Email: \(patron.email ?? "")", "Address: \(patron.address ?? "")","Address1: \(patron.address1 ?? "")","Locality: \(patron.locality ?? "")","State: \(patron.state ?? "")","Neighborhood: \(patron.neighborhood ?? "")","County: \(patron.county ?? "")", "Zip: \(patron.zip ?? "")","Contact Preference: \(patron.contactPreference ?? "")","Pin: \(patron.pin ?? "")", "Patron Children: \(patron.children)", "Code: \(patron.codeWord ?? "")", "Signature: \(patron.signature ?? false)", "Guardian: \(patron.isGuardian ?? false)")
         }
     }
     

@@ -33,10 +33,10 @@ class formTextField: UITextField {
         self.borderStyle = .roundedRect
         self.backgroundColor = styleGuide.colors.whitePrimary
         self.textColor = styleGuide.colors.grayPrimary
-        self.font = UIFont(name: "RobotoSlab-Regular", size: 18.0)
+        self.font = UIFont(name: "RobotoSlab-Regular", size: 20.0)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: 500).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         self.autocapitalizationType = .sentences
         self.autocorrectionType = .no

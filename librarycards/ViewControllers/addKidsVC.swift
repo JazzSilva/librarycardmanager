@@ -32,15 +32,28 @@ class addKidsVC: UIViewController, buttonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func setGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [styleGuide.colors.aquaPrimary?.cgColor, styleGuide.colors.navyPrimary?.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setGradient()
+    }
+    
     private func setupLayout() {
         view.backgroundColor = .white
-        
+
         self.title = "Child Information"
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
-        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         formatTextField(childTextField)
         childTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -49,20 +62,13 @@ class addKidsVC: UIViewController, buttonDelegate {
         
         addKidsButton.setTitle("Add Another Child", for: .normal)
         addKidsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        addKidsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
+        addKidsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -170).isActive = true
         addKidsButton.addTarget(self, action: #selector(addAnotherChild), for: .touchUpInside)
         
         doneButton.titleLabel?.text = "Done"
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        doneButton.addTarget(self, action: #selector(doneTapped), for: .touchUpInside)
         doneButton.delegate = self
-    }
-    
-    @objc func doneTapped() {
-        let nextViewController = contactVC()
-        nextViewController.manager = self.manager
-        navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func addAnotherChild() {
@@ -84,7 +90,7 @@ class addKidsVC: UIViewController, buttonDelegate {
     }
     
     func formatTextField(_ textField: UITextField) {
-        textField.placeholder = "First Last"
+        textField.placeholder = "First and Last Name"
         textField.borderStyle = .roundedRect
         textField.backgroundColor = styleGuide.colors.whitePrimary
         textField.textColor = styleGuide.colors.grayPrimary
@@ -102,10 +108,11 @@ class addKidsVC: UIViewController, buttonDelegate {
     }
     
     func onButtonTapped() {
-        //let nextViewController = securityVC()
-        //nextViewController.manager = self.manager
-        //navigationController?.pushViewController(nextViewController, animated: true)
-        _=getAllTextFields(fromView : self.view).map{($0.text = "Hey dude!")}
+        let nextViewController = securityVC()
+        nextViewController.manager = self.manager
+        manager?.printPatron()
+        navigationController?.pushViewController(nextViewController, animated: true)
+        _=getAllTextFields(fromView : self.view).map{self.manager?.activePatron?.children.append($0.text!)}
     }
     
     func getAllTextFields(fromView view: UIView)-> [UITextField] {

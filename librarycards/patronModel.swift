@@ -39,6 +39,9 @@ class Patron {
     var locality: String?
     var county: String?
     
+    var isGuardian: Bool?
+    var children: [String?] = []
+    
     var contactPreference: String?
     var license: String?
     var signature: Bool?

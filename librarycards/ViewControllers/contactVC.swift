@@ -39,15 +39,28 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
         // Dispose of any resources that can be recreated.
     }
     
+    func setGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [styleGuide.colors.aquaPrimary?.cgColor, styleGuide.colors.navyPrimary?.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setGradient()
+    }
+    
     private func setupLayout() {
         view.backgroundColor = .white
         
         self.title = "Contact Information"
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
-        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         phoneTextField.formDelegate = self.manager
         phoneTextField.tag = 7
@@ -81,7 +94,7 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
         preferenceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
         preferenceLabel.bottomAnchor.constraint(equalTo: phoneButton.topAnchor, constant: -50).isActive = true
-        preferenceLabel.textColor = styleGuide.colors.grayPrimary
+        preferenceLabel.textColor = styleGuide.colors.whitePrimary
         preferenceLabel.textAlignment = .right
         
         phoneButton.formatButton(title: "Phone")
@@ -90,7 +103,7 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
         
         emailButton.formatButton(title: "Email")
         emailButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emailButton.topAnchor.constraint(equalTo: phoneButton.bottomAnchor, constant: 50).isActive = true
+        emailButton.topAnchor.constraint(equalTo: phoneButton.bottomAnchor, constant: 25).isActive = true
         
         if (self.manager?.activePatron?.contactPreference != nil && self.manager?.activePatron?.contactPreference != "Phone") {
             emailButton.isSelected = .init(true)

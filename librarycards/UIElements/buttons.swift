@@ -30,7 +30,7 @@ class nextButton: UIButton {
     }
     
     func formatButton() {
-        self.backgroundColor = styleGuide.colors.greenAccent
+        self.backgroundColor = styleGuide.colors.orangeAccent
         self.setTitleColor(styleGuide.colors.whitePrimary, for: .normal)
         self.setTitle("Next", for: .normal)
         self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 22.0)
@@ -63,13 +63,13 @@ class selectionButton: UIButton {
     }
     
     func formatButton() {
-        self.backgroundColor = styleGuide.colors.navyPrimary
+        self.backgroundColor = styleGuide.colors.orangeAccent
         self.setTitleColor(styleGuide.colors.whitePrimary, for: .normal)
         self.setTitle("Default", for: .normal)
-        self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 25.0)
+        self.titleLabel?.font = UIFont(name: "RobotoSlab-Bold", size: 28.0)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: 450).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 550).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 115).isActive = true
         
         self.layer.shadowColor = styleGuide.colors.grayPrimary?.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)

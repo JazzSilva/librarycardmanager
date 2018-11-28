@@ -1,15 +1,16 @@
 //
-//  googlePlacesExtension.swift
+//  parentGooglePlaces.swift
 //  librarycards
 //
-//  Created by Jasmin Silva on 11/15/18.
+//  Created by Jasmin Silva on 11/28/18.
 //  Copyright © 2018 Jasmin Silva. All rights reserved.
 //
 
 import Foundation
 import GooglePlaces
 
-extension manualEntryVC: GMSAutocompleteViewControllerDelegate {
+
+extension parentLogInVC: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
@@ -78,7 +79,7 @@ extension manualEntryVC: GMSAutocompleteViewControllerDelegate {
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
@@ -92,3 +93,5 @@ extension manualEntryVC: GMSAutocompleteViewControllerDelegate {
         present(autocompleteController, animated: true, completion: nil)
     }
 }
+
+

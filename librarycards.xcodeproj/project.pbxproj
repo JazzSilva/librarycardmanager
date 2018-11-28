@@ -27,8 +27,6 @@
 		DD40BEC4218268ED00E570DE /* responseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC3218268ED00E570DE /* responseVC.swift */; };
 		DD40BEC62182698A00E570DE /* swipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC52182698A00E570DE /* swipeVC.swift */; };
 		DD40BEC8218269A800E570DE /* manualEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC7218269A800E570DE /* manualEntryVC.swift */; };
-		DD40BECA21826A5300E570DE /* myAccountLogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEC921826A5300E570DE /* myAccountLogInVC.swift */; };
-		DD40BECC21826A6900E570DE /* myAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BECB21826A6900E570DE /* myAccountVC.swift */; };
 		DD40BECF2187821700E570DE /* textFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BECE2187821700E570DE /* textFields.swift */; };
 		DD40BED5218787C600E570DE /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED1218787C500E570DE /* RobotoSlab-Regular.ttf */; };
 		DD40BED6218787C600E570DE /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD40BED2218787C500E570DE /* RobotoSlab-Thin.ttf */; };
@@ -48,6 +46,7 @@
 		DD40BEF121AB734600E570DE /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40BEF021AB734600E570DE /* colors.swift */; };
 		DD8ADB1021AC10CC0025744D /* UIfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB0F21AC10CC0025744D /* UIfont.swift */; };
 		DD8ADB1221AC10F20025744D /* UIlabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB1121AC10F20025744D /* UIlabel.swift */; };
+		DD8ADB1421AEB0140025744D /* parentGooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB1321AEB0140025744D /* parentGooglePlaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,8 +98,6 @@
 		DD40BEC3218268ED00E570DE /* responseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseVC.swift; sourceTree = "<group>"; };
 		DD40BEC52182698A00E570DE /* swipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipeVC.swift; sourceTree = "<group>"; };
 		DD40BEC7218269A800E570DE /* manualEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manualEntryVC.swift; sourceTree = "<group>"; };
-		DD40BEC921826A5300E570DE /* myAccountLogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAccountLogInVC.swift; sourceTree = "<group>"; };
-		DD40BECB21826A6900E570DE /* myAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAccountVC.swift; sourceTree = "<group>"; };
 		DD40BECE2187821700E570DE /* textFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFields.swift; sourceTree = "<group>"; };
 		DD40BED1218787C500E570DE /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
 		DD40BED2218787C500E570DE /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
@@ -118,6 +115,7 @@
 		DD40BEF021AB734600E570DE /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		DD8ADB0F21AC10CC0025744D /* UIfont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIfont.swift; sourceTree = "<group>"; };
 		DD8ADB1121AC10F20025744D /* UIlabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIlabel.swift; sourceTree = "<group>"; };
+		DD8ADB1321AEB0140025744D /* parentGooglePlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentGooglePlaces.swift; sourceTree = "<group>"; };
 		DFC3F393E9ACF97DC4E9AC41 /* Pods-librarycardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-librarycardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-librarycardsTests/Pods-librarycardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,8 +243,6 @@
 				DD40BEC1218268DB00E570DE /* securityVC.swift */,
 				DD40BEBB2182684C00E570DE /* parentLogInVC.swift */,
 				DD40BEBD2182689200E570DE /* addKidsVC.swift */,
-				DD40BEC921826A5300E570DE /* myAccountLogInVC.swift */,
-				DD40BECB21826A6900E570DE /* myAccountVC.swift */,
 				DD40BEC3218268ED00E570DE /* responseVC.swift */,
 			);
 			path = ViewControllers;
@@ -279,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				DD40BEE8219DF70D00E570DE /* googlePlacesExtension.swift */,
+				DD8ADB1321AEB0140025744D /* parentGooglePlaces.swift */,
 				DD40BEEE21AB731500E570DE /* hexToUIColor.swift */,
 				DD8ADB0F21AC10CC0025744D /* UIfont.swift */,
 				DD8ADB1121AC10F20025744D /* UIlabel.swift */,
@@ -543,7 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD40BEEB219E108300E570DE /* radioButtonController.swift in Sources */,
-				DD40BECA21826A5300E570DE /* myAccountLogInVC.swift in Sources */,
+				DD8ADB1421AEB0140025744D /* parentGooglePlaces.swift in Sources */,
 				B053B2142174ED2A00243D4C /* RootViewController.swift in Sources */,
 				DD40BEB3217E2B2F00E570DE /* patronModel.swift in Sources */,
 				DD8ADB1021AC10CC0025744D /* UIfont.swift in Sources */,
@@ -555,7 +552,6 @@
 				DD40BEC8218269A800E570DE /* manualEntryVC.swift in Sources */,
 				B053B2122174ED2A00243D4C /* AppDelegate.swift in Sources */,
 				DD40BEDE218B766A00E570DE /* LoginViewController.swift in Sources */,
-				DD40BECC21826A6900E570DE /* myAccountVC.swift in Sources */,
 				DD40BEC62182698A00E570DE /* swipeVC.swift in Sources */,
 				DD40BEBA2182680800E570DE /* selectMainVC.swift in Sources */,
 				DD40BEB1217E296F00E570DE /* libraryCardManager.swift in Sources */,

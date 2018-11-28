@@ -42,17 +42,32 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func setGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [styleGuide.colors.aquaPrimary?.cgColor, styleGuide.colors.navyPrimary?.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setGradient()
+    }
+    
     private func setupLayout() {
         view.backgroundColor = .white
         
+        //setGradient()
+        
         self.title = "Patron Information"
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
-        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.pinkSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
+        cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.aquaPrimary
+        navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         firstNameTextField.formDelegate = self.manager
         firstNameTextField.tag = 4
