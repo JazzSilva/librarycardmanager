@@ -22,6 +22,7 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
     let middleNameTextField = formTextField()
     let lastNameTextField = formTextField()
     let address1TextField = UITextField()
+    
     let doneButton = nextButton()
     
     override func viewDidLoad() {
@@ -30,13 +31,15 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
         view.addSubview(middleNameTextField)
         view.addSubview(lastNameTextField)
         view.addSubview(address1TextField)
+
         view.addSubview(doneButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
         
         manager?.printPatron()
+        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,7 +69,8 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
         navigationItem.setRightBarButton(cancelButton, animated: true)
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         firstNameTextField.formDelegate = self.manager
@@ -78,7 +82,7 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
             firstNameTextField.placeholder = "First Name"
         }
         firstNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        firstNameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -220).isActive = true
+        firstNameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -260).isActive = true
         
         middleNameTextField.formDelegate = self.manager
         middleNameTextField.tag = 5
@@ -88,7 +92,7 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
         else {
             middleNameTextField.placeholder = "Middle Name"
         }
-        middleNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 30).isActive = true
+        middleNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 15).isActive = true
         middleNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         lastNameTextField.formDelegate = self.manager
@@ -99,7 +103,7 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
         else {
             lastNameTextField.placeholder = "Last Name"
         }
-        lastNameTextField.topAnchor.constraint(equalTo: middleNameTextField.bottomAnchor, constant: 30).isActive = true
+        lastNameTextField.topAnchor.constraint(equalTo: middleNameTextField.bottomAnchor, constant: 15).isActive = true
         lastNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         address1TextField.delegate = self
@@ -110,23 +114,33 @@ class manualEntryVC: UIViewController, buttonDelegate, UITextFieldDelegate {
         else {
             address1TextField.placeholder = "Mailing Address"
         }
-        address1TextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 50).isActive = true
+        address1TextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 15).isActive = true
         address1TextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         doneButton.delegate = self
+        
     }
     
     func onButtonTapped() {
-        let nextViewController = contactVC()
-        manager?.activePatron?.firstName = firstNameTextField.text
-        manager?.activePatron?.middleName = middleNameTextField.text
-        manager?.activePatron?.lastName = lastNameTextField.text
-        manager?.activePatron?.address = address1TextField.text
-        nextViewController.manager = self.manager
-        navigationController?.pushViewController(nextViewController, animated: true)
+        if (firstNameTextField.text?.isEmpty)! || (lastNameTextField.text?.isEmpty)! {
+            let alertController = UIAlertController(title: "Sorry!", message: "Please complete all fields.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
+            let nextViewController = contactVC()
+            manager?.activePatron?.firstName = firstNameTextField.text
+            manager?.activePatron?.middleName = middleNameTextField.text
+            manager?.activePatron?.lastName = lastNameTextField.text
+            manager?.activePatron?.address = address1TextField.text
+            nextViewController.manager = self.manager
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
+    
     
     @objc func cancel() {
         navigationController?.popToRootViewController(animated: true)

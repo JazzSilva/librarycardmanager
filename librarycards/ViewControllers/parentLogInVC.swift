@@ -62,7 +62,8 @@ class parentLogInVC: UIViewController, buttonDelegate, UITextFieldDelegate {
         navigationItem.setRightBarButton(cancelButton, animated: true)
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         firstNameTextField.formDelegate = self.manager
@@ -116,15 +117,23 @@ class parentLogInVC: UIViewController, buttonDelegate, UITextFieldDelegate {
     }
     
     func onButtonTapped() {
-        let nextViewController = addKidsVC()
-        manager?.activePatron?.isGuardian = true
-        manager?.activePatron?.firstName = firstNameTextField.text
-        manager?.activePatron?.middleName = middleNameTextField.text
-        manager?.activePatron?.lastName = lastNameTextField.text
-        manager?.activePatron?.address = address1TextField.text
-        manager?.addChild()
-        nextViewController.manager = self.manager
-        navigationController?.pushViewController(nextViewController, animated: true)
+        if (firstNameTextField.text?.isEmpty)! || (middleNameTextField.text?.isEmpty)! || (lastNameTextField.text?.isEmpty)! {
+            let alertController = UIAlertController(title: "Sorry!", message: "Please complete all fields.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
+            let nextViewController = addKidsVC()
+            manager?.activePatron?.isGuardian = true
+            manager?.activePatron?.firstName = firstNameTextField.text
+            manager?.activePatron?.middleName = middleNameTextField.text
+            manager?.activePatron?.lastName = lastNameTextField.text
+            manager?.activePatron?.address = address1TextField.text
+            manager?.addChild()
+            nextViewController.manager = self.manager
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
     
     @objc func cancel() {

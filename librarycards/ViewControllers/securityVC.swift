@@ -52,7 +52,8 @@ class securityVC: UIViewController, buttonDelegate {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
         cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         pinTextField.formDelegate = self.manager
@@ -85,11 +86,19 @@ class securityVC: UIViewController, buttonDelegate {
     }
     
     func onButtonTapped() {
-        let nextViewController = responseVC()
-        nextViewController.manager = self.manager
-        manager?.activePatron?.pin = pinTextField.text
-        manager?.activePatron?.codeWord = codeWordTextField.text
-        navigationController?.pushViewController(nextViewController, animated: true)
+        if (pinTextField.text?.isEmpty)! || (codeWordTextField.text?.isEmpty)! {
+            let alertController = UIAlertController(title: "Sorry!", message: "Please complete all fields.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
+            let nextViewController = responseVC()
+            nextViewController.manager = self.manager
+            manager?.activePatron?.pin = pinTextField.text
+            manager?.activePatron?.codeWord = codeWordTextField.text
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
     
     @objc func cancel() {

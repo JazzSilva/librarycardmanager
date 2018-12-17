@@ -68,7 +68,8 @@ class selectMainVC: UIViewController {
         navigationController?.navigationBar.layer.shadowOpacity = 1.0
         navigationController?.navigationBar.layer.masksToBounds = false
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         navigationController?.navigationBar.largeTitleTextAttributes =
             [NSAttributedStringKey.foregroundColor: styleGuide.colors.whitePrimary,

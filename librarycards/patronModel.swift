@@ -20,6 +20,7 @@ class Patron {
     var cardnumber: String?
     var type: String?
     var status: String?
+    var didSwipe: Bool? = false
     
     var firstName: String?
     var middleName: String?
@@ -39,7 +40,7 @@ class Patron {
     var locality: String?
     var county: String?
     
-    var isGuardian: Bool?
+    var isGuardian: Bool? = false
     var children: [String?] = []
     
     var contactPreference: String?

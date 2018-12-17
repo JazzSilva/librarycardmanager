@@ -52,7 +52,8 @@ class addKidsVC: UIViewController, buttonDelegate {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
         cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         formatTextField(childTextField)
@@ -108,11 +109,19 @@ class addKidsVC: UIViewController, buttonDelegate {
     }
     
     func onButtonTapped() {
-        let nextViewController = securityVC()
-        nextViewController.manager = self.manager
-        manager?.printPatron()
-        navigationController?.pushViewController(nextViewController, animated: true)
-        _=getAllTextFields(fromView : self.view).map{self.manager?.activePatron?.children.append($0.text!)}
+        if (childTextField.text?.isEmpty)! {
+            let alertController = UIAlertController(title: "Sorry!", message: "You must enter at least one child.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
+            let nextViewController = securityVC()
+            nextViewController.manager = self.manager
+            manager?.printPatron()
+            navigationController?.pushViewController(nextViewController, animated: true)
+            _=getAllTextFields(fromView : self.view).map{self.manager?.activePatron?.children.append($0.text!)}
+        }
     }
     
     func getAllTextFields(fromView view: UIView)-> [UITextField] {

@@ -80,6 +80,7 @@ extension manualEntryVC: GMSAutocompleteViewControllerDelegate {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        //This is where we check for a network connection
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         

@@ -26,22 +26,22 @@ class libraryCardManager: formUpdateDelegate {
     
     func submitApplication() {
         ref = db.collection("users").addDocument(data: [
-            "first": activePatron?.firstName,
-            "middle": activePatron?.middleName,
-            "last": activePatron?.lastName,
-            "email": activePatron?.email,
-            "address": activePatron?.address,
-            "address1": activePatron?.address1,
-            "state": activePatron?.state,
-            "neighborhood": activePatron?.neighborhood,
-            "county": activePatron?.county,
-            "zip": activePatron?.zip,
-            "contactPreference": activePatron?.contactPreference,
-            "pin": activePatron?.pin,
-            "code": activePatron?.codeWord,
-            "signature": activePatron?.signature,
-            "guardian": activePatron?.isGuardian,
-            "children": activePatron?.children
+            "first": activePatron?.firstName as Any,
+            "middle": activePatron?.middleName as Any,
+            "last": activePatron?.lastName as Any,
+            "email": activePatron?.email as Any,
+            "address": activePatron?.address as Any,
+            "address1": activePatron?.address1 as Any,
+            "state": activePatron?.state as Any,
+            "neighborhood": activePatron?.neighborhood as Any,
+            "county": activePatron?.county as Any,
+            "zip": activePatron?.zip as Any,
+            "contactPreference": activePatron?.contactPreference as Any,
+            "pin": activePatron?.pin as Any,
+            "code": activePatron?.codeWord as Any,
+            "signature": activePatron?.signature as Any,
+            "guardian": activePatron?.isGuardian as Any,
+            "children": activePatron?.children as Any
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

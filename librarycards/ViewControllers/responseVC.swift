@@ -56,7 +56,8 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
         cancelButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.setRightBarButton(cancelButton, animated: true)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
         termsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -100,6 +101,27 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
     func onButtonTapped() {
         ///TODO: Need to replace this with a proper unwind/log out segue
         manager?.submitApplication()
+        if manager?.activePatron?.didSwipe == false && manager?.activePatron?.isGuardian == true {
+            let alertController = UIAlertController(title: "Thank You", message: "Please visit the front desk to pick up your children's library card(s).", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: backToHome)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if manager?.activePatron?.didSwipe == false && manager?.activePatron?.isGuardian == false {
+            let alertController = UIAlertController(title: "Thank You", message: "Please visit the front desk to pick up your library card.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: backToHome)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
+            let alertController = UIAlertController(title: "Thank You", message: "You may now use your license to checkout materials.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: backToHome)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func backToHome(alert: UIAlertAction!) {
         navigationController?.popToRootViewController(animated: true)
     }
     

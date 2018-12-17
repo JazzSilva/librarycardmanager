@@ -1,24 +1,24 @@
 //
-//  swipeVC.swift
+//  lilitabVC.swift
 //  librarycards
 //
-//  Created by Jasmin Silva on 10/25/18.
+//  Created by Jasmin Silva on 12/10/18.
 //  Copyright © 2018 Jasmin Silva. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import LilitabSDK
 
-class swipeVC: UIViewController {
+class lilitabVC: UIViewController {
     
     var manager: libraryCardManager?
-    let swipeCardButton = selectionButton()
-    let manuallyEnterButton = selectionButton()
+    var lilitab = LilitabSDK.singleton()
+    let doneButton = nextButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(swipeCardButton)
-        view.addSubview(manuallyEnterButton)
+        view.addSubview(doneButton)
         setupLayout()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -53,17 +53,7 @@ class swipeVC: UIViewController {
         navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: styleGuide.colors.whiteSecondary, NSAttributedStringKey.font: UIFont(name: "RobotoSlab-Regular", size: 18)!], for: .normal)
         navigationItem.backBarButtonItem?.tintColor = styleGuide.colors.whiteSecondary
         
-        self.title = "Sign-Up Method"
-        swipeCardButton.setTitle("Swipe my ID/License", for: .normal)
-        swipeCardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        swipeCardButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
-        swipeCardButton.addTarget(self, action: #selector(swipeTapped), for: .touchUpInside)
-        
-        manuallyEnterButton.setTitle("Manually Enter my Information", for: .normal)
-        manuallyEnterButton.topAnchor.constraint(equalTo: swipeCardButton.bottomAnchor, constant: 100).isActive = true
-        manuallyEnterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        manuallyEnterButton.addTarget(self, action: #selector(manuallyEnterTapped), for: .touchUpInside)
-        
+        self.title = "Please Swipe Card"
     }
     
     @objc func swipeTapped() {
@@ -72,14 +62,11 @@ class swipeVC: UIViewController {
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
-    @objc func manuallyEnterTapped() {
-        let nextViewController = manualEntryVC()
-        nextViewController.manager = self.manager
-        navigationController?.pushViewController(nextViewController, animated: true)
-    }
     
     @objc func cancel() {
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    
     
 }
