@@ -25,7 +25,7 @@ class Patron {
     var firstName: String?
     var middleName: String?
     var lastName: String?
-    var birthday: NSDate?
+    var birthday: String?
     var phone: String?
     var email: String?
     

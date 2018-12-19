@@ -67,7 +67,7 @@ class swipeVC: UIViewController {
     }
     
     @objc func swipeTapped() {
-        let nextViewController = contactVC()
+        let nextViewController = lilitabVC()
         nextViewController.manager = self.manager
         navigationController?.pushViewController(nextViewController, animated: true)
     }

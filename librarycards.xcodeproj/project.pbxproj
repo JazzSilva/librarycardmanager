@@ -47,6 +47,7 @@
 		DD71727421BED44D00EE3473 /* LilitabSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD71727221BED43B00EE3473 /* LilitabSDK.framework */; };
 		DD71727521BED44D00EE3473 /* LilitabSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD71727221BED43B00EE3473 /* LilitabSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD71727821BED6AF00EE3473 /* lilitabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71727721BED6AF00EE3473 /* lilitabVC.swift */; };
+		DD71727A21C7330900EE3473 /* stringCapturedGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71727921C7330900EE3473 /* stringCapturedGroups.swift */; };
 		DD8ADB1021AC10CC0025744D /* UIfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB0F21AC10CC0025744D /* UIfont.swift */; };
 		DD8ADB1221AC10F20025744D /* UIlabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB1121AC10F20025744D /* UIlabel.swift */; };
 		DD8ADB1421AEB0140025744D /* parentGooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8ADB1321AEB0140025744D /* parentGooglePlaces.swift */; };
@@ -132,6 +133,7 @@
 		DD40BEF021AB734600E570DE /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		DD71727221BED43B00EE3473 /* LilitabSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LilitabSDK.framework; sourceTree = "<group>"; };
 		DD71727721BED6AF00EE3473 /* lilitabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lilitabVC.swift; sourceTree = "<group>"; };
+		DD71727921C7330900EE3473 /* stringCapturedGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringCapturedGroups.swift; sourceTree = "<group>"; };
 		DD8ADB0F21AC10CC0025744D /* UIfont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIfont.swift; sourceTree = "<group>"; };
 		DD8ADB1121AC10F20025744D /* UIlabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIlabel.swift; sourceTree = "<group>"; };
 		DD8ADB1321AEB0140025744D /* parentGooglePlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentGooglePlaces.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				DD40BEEE21AB731500E570DE /* hexToUIColor.swift */,
 				DD8ADB0F21AC10CC0025744D /* UIfont.swift */,
 				DD8ADB1121AC10F20025744D /* UIlabel.swift */,
+				DD71727921C7330900EE3473 /* stringCapturedGroups.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -509,8 +512,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-librarycards/Pods-librarycards-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -522,8 +527,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -572,6 +579,7 @@
 				DD40BEC4218268ED00E570DE /* responseVC.swift in Sources */,
 				DD71727821BED6AF00EE3473 /* lilitabVC.swift in Sources */,
 				DD40BEED219E10DC00E570DE /* radioButton.swift in Sources */,
+				DD71727A21C7330900EE3473 /* stringCapturedGroups.swift in Sources */,
 				DD40BEC0218268C700E570DE /* contactVC.swift in Sources */,
 				DD40BEC8218269A800E570DE /* manualEntryVC.swift in Sources */,
 				B053B2122174ED2A00243D4C /* AppDelegate.swift in Sources */,

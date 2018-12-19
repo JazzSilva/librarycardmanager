@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PopupDialog
 
 class addKidsVC: UIViewController, buttonDelegate {
     
@@ -74,9 +75,20 @@ class addKidsVC: UIViewController, buttonDelegate {
     
     @objc func addAnotherChild() {
         if self.manager?.childCounter == 4 {
-            let alert = UIAlertController(title: "Sorry!", message: "You can only register four children at once.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            let sorryImage = UIImage(named: "sorryIcon")
+            let popUp = PopupDialog(title: "Sorry!", message: "You can only register four children at once.", image: sorryImage)
+            let dialogAppearance = PopupDialogDefaultView.appearance()
+            dialogAppearance.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            dialogAppearance.messageFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            
+            let buttonOne = CancelButton(title: "Okay") {
+                print("User pressed okay.")
+            }
+            buttonOne.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            popUp.addButtons([buttonOne])
+            
+            // Present dialog
+            self.present(popUp, animated: true, completion: nil)
         }
         else
         {
@@ -110,10 +122,20 @@ class addKidsVC: UIViewController, buttonDelegate {
     
     func onButtonTapped() {
         if (childTextField.text?.isEmpty)! {
-            let alertController = UIAlertController(title: "Sorry!", message: "You must enter at least one child.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            let sorryImage = UIImage(named: "sorryIcon")
+            let popUp = PopupDialog(title: "Sorry!", message: "You must add at least one child.", image: sorryImage)
+            let dialogAppearance = PopupDialogDefaultView.appearance()
+            dialogAppearance.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            dialogAppearance.messageFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            
+            let buttonOne = CancelButton(title: "Okay") {
+                print("User pressed okay.")
+            }
+            buttonOne.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            popUp.addButtons([buttonOne])
+            
+            // Present dialog
+            self.present(popUp, animated: true, completion: nil)
         }
         else {
             let nextViewController = securityVC()

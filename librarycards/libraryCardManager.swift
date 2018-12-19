@@ -29,7 +29,10 @@ class libraryCardManager: formUpdateDelegate {
             "first": activePatron?.firstName as Any,
             "middle": activePatron?.middleName as Any,
             "last": activePatron?.lastName as Any,
+            "birthday": activePatron?.birthday as Any,
+            "license": activePatron?.license as Any,
             "email": activePatron?.email as Any,
+            "phone": activePatron?.phone as Any,
             "address": activePatron?.address as Any,
             "address1": activePatron?.address1 as Any,
             "state": activePatron?.state as Any,
@@ -40,7 +43,8 @@ class libraryCardManager: formUpdateDelegate {
             "pin": activePatron?.pin as Any,
             "code": activePatron?.codeWord as Any,
             "signature": activePatron?.signature as Any,
-            "guardian": activePatron?.isGuardian as Any,
+            "didSwipe": activePatron?.didSwipe as Any,
+            "isGuardian": activePatron?.isGuardian as Any,
             "children": activePatron?.children as Any
         ]) { err in
             if let err = err {
@@ -70,7 +74,7 @@ class libraryCardManager: formUpdateDelegate {
     
     func printPatron() {
         for patron in patronQueue {
-            print("First Name: \(patron.firstName ?? "")", "Middle Name: \(patron.middleName ?? "")", "Last Name: \(patron.lastName ?? "")", "Birthday: \(patron.birthday ?? NSDate())", "Phone: \(patron.phone ?? "")", "Email: \(patron.email ?? "")", "Address: \(patron.address ?? "")","Address1: \(patron.address1 ?? "")","Locality: \(patron.locality ?? "")","State: \(patron.state ?? "")","Neighborhood: \(patron.neighborhood ?? "")","County: \(patron.county ?? "")", "Zip: \(patron.zip ?? "")","Contact Preference: \(patron.contactPreference ?? "")","Pin: \(patron.pin ?? "")", "Patron Children: \(patron.children)", "Code: \(patron.codeWord ?? "")", "Signature: \(patron.signature ?? false)", "Guardian: \(patron.isGuardian ?? false)")
+            print("First Name: \(patron.firstName ?? "")", "Middle Name: \(patron.middleName ?? "")", "Last Name: \(patron.lastName ?? "")", "Birthday: \(patron.birthday ?? "")", "License: \(patron.license ?? "")","Phone: \(patron.phone ?? "")", "Email: \(patron.email ?? "")", "Address: \(patron.address ?? "")","Address1: \(patron.address1 ?? "")","Locality: \(patron.locality ?? "")","State: \(patron.state ?? "")","Neighborhood: \(patron.neighborhood ?? "")","County: \(patron.county ?? "")", "Zip: \(patron.zip ?? "")","Contact Preference: \(patron.contactPreference ?? "")","Pin: \(patron.pin ?? "")","didSwipe: \(patron.didSwipe ?? false)", "Patron Children: \(patron.children)", "Code: \(patron.codeWord ?? "")", "Signature: \(patron.signature ?? false)", "Guardian: \(patron.isGuardian ?? false)")
         }
     }
     

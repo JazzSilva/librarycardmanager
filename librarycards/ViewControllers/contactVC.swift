@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PopupDialog
 
 class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelegate {
     
@@ -124,10 +125,20 @@ class contactVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelega
     
     func onButtonTapped() {
         if (phoneTextField.text?.isEmpty)! || (emailTextField.text?.isEmpty)! {
-            let alertController = UIAlertController(title: "Sorry!", message: "Please complete all fields.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            let sorryImage = UIImage(named: "sorryIcon")
+            let popUp = PopupDialog(title: "Sorry!", message: "Please complete all fields.", image: sorryImage)
+            let dialogAppearance = PopupDialogDefaultView.appearance()
+            dialogAppearance.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            dialogAppearance.messageFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            
+            let buttonOne = CancelButton(title: "Okay") {
+                print("User pressed okay.")
+            }
+            buttonOne.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            popUp.addButtons([buttonOne])
+            
+            // Present dialog
+            self.present(popUp, animated: true, completion: nil)
         }
         else {
             let nextViewController = securityVC()

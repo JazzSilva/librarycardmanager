@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import PopupDialog
 
 class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDelegate {
     
@@ -77,13 +78,13 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
         agreeButton.isSelected = .init(false)
         agreeButton.formatButton(title: "I agree")
         agreeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        agreeButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 80).isActive = true
+        agreeButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 30).isActive = true
         agreeButton.addTarget(self, action: #selector(didSelect), for: .touchUpInside)
         
         disagreeButton.isSelected = .init(true)
         disagreeButton.formatButton(title: "I do not agree")
         disagreeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        disagreeButton.topAnchor.constraint(equalTo: agreeButton.bottomAnchor, constant: 50).isActive = true
+        disagreeButton.topAnchor.constraint(equalTo: agreeButton.bottomAnchor, constant: 30).isActive = true
         disagreeButton.addTarget(self, action: #selector(didSelect), for: .touchUpInside)
         
         radioButtonController = SSRadioButtonsController(buttons: agreeButton, disagreeButton)
@@ -102,29 +103,58 @@ class responseVC: UIViewController, buttonDelegate, SSRadioButtonControllerDeleg
         ///TODO: Need to replace this with a proper unwind/log out segue
         manager?.submitApplication()
         if manager?.activePatron?.didSwipe == false && manager?.activePatron?.isGuardian == true {
-            let alertController = UIAlertController(title: "Thank You", message: "Please visit the front desk to pick up your children's library card(s).", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: backToHome)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            //This popUp will display when a parent has registered a child
+            let completeImage = UIImage(named: "completeIcon")
+            let popUp = PopupDialog(title: "Thank You", message: "Please visit the front desk to pick up your children's library card(s).", image: completeImage)
+            let dialogAppearance = PopupDialogDefaultView.appearance()
+            dialogAppearance.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            dialogAppearance.messageFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            
+            let buttonOne = CancelButton(title: "Okay") {
+                self.cancel()
+                print("User pressed okay.")
+            }
+            buttonOne.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            popUp.addButtons([buttonOne])
+            // Present dialog
+            self.present(popUp, animated: true, completion: nil)
+    
         }
         else if manager?.activePatron?.didSwipe == false && manager?.activePatron?.isGuardian == false {
-            let alertController = UIAlertController(title: "Thank You", message: "Please visit the front desk to pick up your library card.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: backToHome)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            //This popUp will display when a parent has registered a child
+            let completeImage = UIImage(named: "completeIcon")
+            let popUp = PopupDialog(title: "Thank You", message: "Please visit the front desk to pick up your library card.", image: completeImage)
+            let dialogAppearance = PopupDialogDefaultView.appearance()
+            dialogAppearance.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            dialogAppearance.messageFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            
+            let buttonOne = CancelButton(title: "Okay") {
+                self.cancel()
+                print("User pressed okay.")
+            }
+            buttonOne.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            popUp.addButtons([buttonOne])
+            // Present dialog
+            self.present(popUp, animated: true, completion: nil)
         }
         else {
-            let alertController = UIAlertController(title: "Thank You", message: "You may now use your license to checkout materials.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: backToHome)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            //This popUp will display when a parent has registered a child
+            let completeImage = UIImage(named: "completeIcon")
+            let popUp = PopupDialog(title: "Thank You", message: "You may now use your license to checkout materials.", image: completeImage)
+            let dialogAppearance = PopupDialogDefaultView.appearance()
+            dialogAppearance.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            dialogAppearance.messageFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            let buttonOne = CancelButton(title: "Okay") {
+                self.cancel()
+                print("User pressed okay.")
+            }
+            buttonOne.titleFont = UIFont(name: "RobotoSlab-Regular", size: 18)!
+            popUp.addButtons([buttonOne])
+            // Present dialog
+            self.present(popUp, animated: true, completion: nil)
         }
     }
-    
-    func backToHome(alert: UIAlertAction!) {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
+
     @objc func cancel() {
         navigationController?.popToRootViewController(animated: true)
     }
